@@ -14,17 +14,9 @@ El diseño de referencia para el desarrollo se encuentra aquí:
 
 ---
 
-## 📁 Estructura del proyecto
 
-```
-mariluna-sitioweb/
-├── index.html
-├── css/
-├── js/
-└── assets/
-```
 
-> *Esta estructura se irá actualizando a medida que avance el proyecto.*
+> *La estructura se irá actualizando a medida que avance el proyecto.*
 
 ---
 
@@ -35,18 +27,4 @@ git clone https://github.com/Valew7/mariluna-sitioweb.git
 cd mariluna-sitioweb
 ```
 
----
 
-## 🤝 Contribución
-
-Si vas a colaborar en este proyecto:
-
-1. Revisa el diseño en Figma antes de escribir código.
-2. Crea una rama nueva para tus cambios.
-3. Haz un pull request describiendo qué cambiaste.
-
----
-
-## 📬 Contacto
-
-Proyecto privado de **Mariluna Postres**. Para dudas o acceso, contacta al administrador del repositorio.
