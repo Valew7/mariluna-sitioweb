@@ -3,7 +3,24 @@
 Repositorio del sitio web oficial de **Mariluna Postres**. Este proyecto contiene el código fuente de la página principal, construida a partir del diseño en Figma.
 
 ---
+## 🌿 Flujo de trabajo con ramas
 
+Nunca subir cambios directamente a `main`. El flujo es:
+
+1. Cada integrante trabaja en su rama personal (`Valentina`, `Michelle`, `Camilo`)
+2. Cuando terminas algo, haces un **Pull Request** de tu rama → `dev`
+3. El equipo revisa y aprueba el PR
+4. Cuando `dev` está estable, se hace un PR de `dev` → `main`
+
+| Rama | Propósito |
+|------|-----------|
+| `main` | Versión final / entrega |
+| `dev` | Integración del equipo |
+| `Valentina` | Rama personal |
+| `Michelle` | Rama personal |
+| `Camilo` | Rama personal |
+
+---------------------------------------------------------------------------------------------------------------------------
 ## 🎨 Diseño en Figma
 
 El diseño de referencia para el desarrollo se encuentra aquí:
