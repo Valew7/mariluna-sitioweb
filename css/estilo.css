@@ -352,6 +352,7 @@ body{
 }
 
 .section-title h2{
+  color:#2563eb;
   font-family:'Lora', serif;
   font-size:3rem;
   margin-bottom:15px;
@@ -874,8 +875,8 @@ form textarea {
 
 /* Iconos */
 
-.orange-icon { 
-    background: #ffedd5; 
+.orange-icon {
+    background: #ffedd5;
 }
 
 .purple-icon {
@@ -1104,10 +1105,7 @@ form textarea {
 }
 
 .feature-item{
-  background:white;
-  padding:16px;
-  border-radius:12px;
-  border:2px solid #dbeafe;
+  padding:16px;;
   color:#444;
 }
 
@@ -1139,7 +1137,7 @@ form textarea {
 
 .info-card-cheese{
   background:white;
-  padding:30px;
+  padding:22px;
   border-radius:20px;
   border:2px solid #bfdbfe;
   box-shadow:0 5px 15px rgba(0,0,0,0.05);
@@ -1148,12 +1146,165 @@ form textarea {
 .info-card-cheese h3{
   color:#2563eb;
   margin-bottom:15px;
-  font-size:1.5rem;
+  font-size:1rem;
+  font-weight: 200;
 }
 
 .info-card-cheese p{
   color:#555;
   line-height:1.7;
+}
+
+/* BOTON VOLVER */
+
+.volver-container{
+  padding-top:40px;
+  text-align:center;
+}
+
+.btn-volver{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:14px 28px;
+  border:2px solid #c084fc;
+  border-radius:14px;
+  text-decoration:none;
+  color:#7e22ce;
+  font-weight:600;
+  background:white;
+  transition:0.3s;
+}
+
+.btn-volver:hover{
+  background:#faf5ff;
+  transform:translateY(-2px);
+}
+
+
+/* TARJETAS CHEESECAKES */
+
+.product-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  border:2px solid #bfdbfe;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+}
+
+.product-image{
+  position:relative;
+  height:330px;
+  overflow:hidden;
+}
+
+.product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.product-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.65),
+    transparent
+  );
+}
+
+.product-image h3{
+  position:absolute;
+  bottom:25px;
+  left:20px;
+  color:white;
+  font-size:2rem;
+  font-family:'Lora', serif;
+  z-index:10;
+}
+
+.cheesecake-card{
+  padding:30px;
+  background:white;
+}
+
+.cheesecake-card p{
+  color:#555;
+  line-height:1.8;
+  margin-bottom:20px;
+  min-height:90px;
+}
+
+.stars{
+  color:#facc15;
+  font-size:1.2rem;
+  margin-bottom:25px;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.price-row h4{
+  color:#2563eb;
+  font-size:2.3rem;
+  font-family:'Lora', serif;
+}
+
+.price-row span{
+  color:#666;
+  font-size:1rem;
+}
+
+.btn-cart-cheesecake{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:18px;
+  background:linear-gradient(to right,#3b82f6,#06b6d4);
+  color:white;
+  font-size:1.1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-cart-cheesecake:hover{
+  transform:translateY(-3px);
+  opacity:0.95;
+}
+
+/* Important Info Title - Informacion titulo importante */
+
+.cheesecake-info{
+background: linear-gradient(
+  to right,
+  #D4F3FE,
+  #DAEBFE
+);
+  border-radius:22px;
+  overflow:hidden;
+  border:2px solid #bfdbfe;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+  padding: 35px;
+}
+
+.section-title-info h3 {
+   text-align: center;
+  color:#2563eb;
+  font-family:'Lora', serif;
+  font-size:2rem;
+  margin-bottom: 14px;
 }
 
 @media(max-width:900px){
@@ -1174,4 +1325,1274 @@ form textarea {
     font-size:2rem;
   }
 
+}
+
+
+
+/* PAGINA GALLETAS ARTESANALES */
+
+
+.cookies-hero{
+  padding:80px 0;
+}
+
+#cookies-title{
+    color:#000000;
+}
+
+#selection-cookie{
+  color: #f97316;
+}
+
+
+#cotizacion-galletas{
+
+  margin-top: 20px;
+  font-size: 0.8rem;
+}
+
+.cookies-feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  background:linear-gradient(to right,#fef3c7,#ffedd5);
+  padding:40px;
+  border-radius:30px;
+  border:2px solid #fcd34d;
+}
+
+.cookies-feature-image img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.cookies-feature-info h3{
+  font-size:2.7rem;
+  color:#b45309;
+  margin-bottom:25px;
+  font-family:'Lora', serif;
+}
+
+.cookies-feature-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.cookies-feature-item{
+  font-size:1.1rem;
+  color:#444;
+}
+
+/* GRID */
+
+.catalogo{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+}
+
+/* TARJETAS */
+
+.cookies-product-card{
+  background:white;
+  border-radius:22px;
+  overflow:hidden;
+  border:2px solid #fde68a;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.cookies-product-card:hover{
+  transform:translateY(-8px);
+}
+
+.cookies-product-image{
+  position:relative;
+  height:330px;
+  overflow:hidden;
+}
+
+.cookies-product-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.cookies-product-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    transparent
+  );
+}
+
+.cookies-product-image h3{
+  position:absolute;
+  bottom:25px;
+  left:20px;
+  color:white;
+  font-size:2rem;
+  font-family:'Lora', serif;
+  z-index:2;
+}
+
+.cookies-card{
+  padding:30px;
+  background:white;
+}
+
+.cookies-card p{
+  color:#555;
+  line-height:1.8;
+  margin-bottom:20px;
+  min-height:90px;
+}
+
+.cookies-stars{
+  color:#facc15;
+  font-size:1.2rem;
+  margin-bottom:25px;
+}
+
+.cookies-price-row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.cookies-price-row h4{
+  color:#b45309;
+  font-size:2.2rem;
+  font-family:'Lora', serif;
+}
+
+.cookies-price-row span{
+  color:#666;
+}
+
+.btn-cart-cookie{
+  width:100%;
+  border:none;
+  border-radius:14px;
+  padding:18px;
+  background:linear-gradient(to right,#f59e0b,#f97316);
+  color:white;
+  font-size:1.1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn-cart-cookie:hover{
+  transform:translateY(-3px);
+}
+
+/* EVENTOS */
+
+.cookies-events{
+  margin-top:80px;
+}
+
+.events-box{
+  background:linear-gradient(to right,#fef3c7,#ffedd5);
+  border:2px solid #fde68a;
+  border-radius:30px;
+  padding:60px 40px;
+  text-align:center;
+}
+
+.events-box h2{
+  color:#b45309;
+  font-size:2.7rem;
+  margin-bottom:20px;
+  font-family:'Lora', serif;
+}
+
+.events-box p{
+  color:#555;
+  margin-bottom:35px;
+}
+
+.event-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.event-card{
+  background:white;
+  padding:25px;
+  border-radius:18px;
+  border:2px solid #fde68a;
+  font-weight:600;
+  color:#444;
+}
+
+/* INFO */
+
+
+.cookies-info{
+  margin-top:80px;
+   background:white;
+   border:2px solid #fde68a;
+   border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    padding:30px;
+}
+
+.cookies-info-box{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+#cookies-info-subtitle{
+  color:#b45309;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+
+}
+
+.info-card-cookie h3 {
+  color:#b45309;
+  margin-bottom:15px;
+  font-size:1rem;
+  font-weight: 200;
+}
+
+.info-card-cookie p{
+  color:#555;
+  line-height:1.7;
+}
+
+/* BOTON VOLVER */
+
+.volver-container{
+  padding-top:40px;
+  text-align:center;
+}
+
+
+
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+  .cookies-feature{
+    grid-template-columns:1fr;
+  }
+
+  .catalogo{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .event-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .cookies-info-box{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .catalogo{
+    grid-template-columns:1fr;
+  }
+
+  .event-grid{
+    grid-template-columns:1fr;
+  }
+
+  .cookies-feature-infO h3{
+    font-size:2rem;
+  }
+
+  .cookies-product-image h3{
+    font-size:1.5rem;
+  }
+
+  .cta h2{
+    font-size:2rem;
+  }
+
+}
+
+
+
+/* PAGINA MACARONS */
+
+/* HERO */
+.macarons-hero {
+  margin-top: 20px;
+}
+
+#macarons-title {
+  font-size: 2.5rem;
+  color: #000000;
+  font-family: 'Lora', serif;
+  text-align: center;
+}
+
+.macarons-hero p {
+  text-align: center;
+  max-width: 800px;
+  margin: 10px auto;
+  color: #666;
+}
+
+/* FEATURED */
+
+
+.macarons-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+  padding: 40px;
+  background: linear-gradient(90deg, #f5f3ff, #faf5ff);
+  border-radius: 20px;
+  border: 2px solid #ddd;
+  align-items: center;
+}
+
+.macarons-feature-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.macarons-feature-info h3 {
+  font-size: 1.8rem;
+  color: #6b21a8;
+  margin-bottom: 15px;
+  font-family: 'Lora', serif;
+}
+
+.macarons-feature-list div {
+  margin-bottom: 10px;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* PRODUCTOS */
+
+#macarons-subtitle{
+  margin-top: 40px;
+  color: #6b21a8;
+  font-size: 2.3rem;
+  margin-bottom: 0;
+}
+
+.macarons-product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  border: 2px solid #e9d5ff;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.macarons-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.macarons-product-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.macarons-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.macarons-product-image h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+
+.macarons-product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+
+/* CARD CONTENT CONTENIDO TARJETAS */
+.macarons-card {
+  padding: 15px;
+}
+
+.macarons-card p {
+  color: #666;
+}
+
+/* PRECIO */
+.macarons-card h4 {
+  color: #6b21a8;
+  font-size: 1.3rem;
+}
+
+/* BOTONES */
+.macarons-card .btn-cart-cookie {
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* SABORES */
+.macarons-flavors {
+  background: linear-gradient(to right, #ede9fe, #f5d0fe);
+  padding: 40px;
+  border-radius: 20px;
+  border: 2px solid #ddd;
+  margin-top: 40px;
+}
+
+.macarons-flavors h2 {
+  text-align: center;
+  color: #6b21a8;
+  font-family: 'Lora', serif;
+  margin-bottom: 20px;
+}
+
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.flavors-grid div {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #e9d5ff;
+}
+
+.macarons-note {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+
+
+/* PAGINA CUPCAKES */
+
+
+.cupcakes-hero {
+  padding: 40px 0;
+}
+
+#cupcakes-title {
+  font-size: 3rem;
+  color: #000000;
+  margin-bottom: 15px;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-hero p {
+  color: #555;
+  max-width: 850px;
+  margin: auto;
+  line-height: 1.7;
+}
+
+/* FEATURE */
+
+.cupcakes-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  margin-top: 50px;
+  align-items: center;
+  background: linear-gradient(to right, #fdf2f8, #ffe4e6);
+  border: 2px solid #fecdd3;
+  border-radius: 25px;
+  padding: 35px;
+}
+
+.cupcakes-feature-image {
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.cupcakes-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cupcakes-feature-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cupcakes-feature-info h3 {
+  font-size: 2.2rem;
+  color: #be185d;
+  margin-bottom: 25px;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.cupcakes-feature-item {
+  padding: 7px;
+  border-radius: 12px;
+  color: #444;
+}
+
+/* BANNER */
+
+.cupcakes-banner {
+  margin-top: 50px;
+  background: linear-gradient(to right, #ec4899, #f43f5e);
+  padding: 35px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+}
+
+.cupcakes-banner h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-banner p {
+  font-size: 1.1rem;
+}
+
+/* PRODUCTS PRODUCTOS */
+
+#cupcakes-selection-title {
+  margin-top: 50px;
+  color: #be185d;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-product-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #fbcfe8;
+  transition: 0.3s ease;
+}
+
+.cupcakes-product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.cupcakes-product-image {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+}
+
+.cupcakes-product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cupcakes-product-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    transparent
+  );
+}
+
+.cupcakes-product-image h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.5rem;
+  z-index: 2;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-card {
+  padding: 22px;
+}
+
+.cupcakes-card p {
+  color: #555;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+
+.cupcakes-stars {
+  margin-bottom: 15px;
+}
+
+.cupcakes-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.cupcakes-price-row h4 {
+  color: #be185d;
+  font-size: 1.7rem;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-price-row span {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.btn-cart-cupcake {
+   width: 100%;
+  background: linear-gradient(to right, #ec4899, #f43f5e);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-cart-cupcake:hover {
+    background: linear-gradient(to right, #db2777, #e11d48);
+  transform: scale(1.02);
+}
+
+/* CUSTOM  PERSONALIZAR */
+
+.cupcakes-custom {
+  margin-top: 60px;
+}
+
+.cupcakes-custom-box {
+  background: linear-gradient(to right, #fce7f3, #ffe4e6);
+  border: 2px solid #fbcfe8;
+  border-radius: 25px;
+  padding: 50px;
+  text-align: center;
+}
+
+.cupcakes-custom-box h2 {
+  font-size: 2.3rem;
+  color: #be185d;
+  margin-bottom: 20px;
+  font-family: 'Lora', serif;
+}
+
+.cupcakes-custom-box p {
+  color: #555;
+  line-height: 1.7;
+  max-width: 850px;
+  margin: auto;
+}
+
+#cupcakes-custom-note {
+  margin-top: 20px;
+  font-size: 0.rem;
+  color: #777;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+  .cupcakes-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .cupcakes-feature-image {
+    height: 350px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  #cupcakes-title {
+    font-size: 2.2rem;
+  }
+
+  .cupcakes-feature-info h3 {
+    font-size: 1.8rem;
+  }
+
+  .cupcakes-banner h3 {
+    font-size: 1.7rem;
+  }
+
+  #cupcakes-selection-title {
+    font-size: 2rem;
+  }
+
+  .cupcakes-custom-box {
+    padding: 35px 25px;
+  }
+
+  .cupcakes-custom-box h2 {
+    font-size: 1.8rem;
+  }
+
+}
+
+
+/* PAGINA POSTRES DE CHOCOLATE */
+
+/* HERO */
+.choco-hero {
+  padding: 60px 0;
+}
+
+.choco-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.choco-title h1 {
+  font-size: 3rem;
+  color: #030100;
+  font-family: 'Lora', serif;
+  margin-bottom: 15px;
+}
+
+.choco-title p {
+  max-width: 800px;
+  margin: auto;
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* FEATURE */
+.choco-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: linear-gradient(to right, #fff1e6, #ffe0bf);
+  border: 2px solid #f0b27a;
+  border-radius: 25px;
+  padding: 40px;
+}
+
+.choco-feature-image {
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.choco-feature-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.choco-feature-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.choco-feature-info h2 {
+  font-size: 2.2rem;
+  color: #7e3d00;
+  margin-bottom: 30px;
+  font-family: 'Lora', serif;
+}
+
+.choco-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.choco-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* PRODUCTS */
+.choco-products-section {
+  padding: 70px 0;
+}
+
+.choco-products-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.choco-products-title h2 {
+  font-size: 2.5rem;
+  color: #7e3d00;
+  font-family: 'Lora', serif;
+}
+
+.choco-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.choco-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 2px solid #f0b27a;
+  transition: 0.3s ease;
+}
+
+.choco-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.choco-card-image {
+  height: 260px;
+  position: relative;
+}
+
+.choco-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.choco-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
+
+.choco-card-image h3 {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: white;
+  font-size: 1.4rem;
+  z-index: 2;
+}
+
+.choco-card-content {
+  padding: 25px;
+   display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.choco-card-content p {
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.choco-stars {
+  margin-bottom: 20px;
+}
+
+.choco-price {
+  font-size: 2rem;
+  color: #7e3d00;
+  font-family: 'Lora', serif;
+  margin-bottom: 20px;
+}
+
+.btn-cart-choco {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #b45309, #c2410c);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+    margin-top: auto;
+}
+
+.btn-cart-choco:hover {
+  background: linear-gradient(to right, #92400e, #9a3412);
+}
+
+/* CHOCOLATE TYPES TIPOS CHOCOLATE */
+.choco-types {
+  background: linear-gradient(to right, #ffe8cc, #fff3e0);
+  border: 2px solid #f0b27a;
+  border-radius: 25px;
+  padding: 50px 40px;
+  margin: 70px auto;
+}
+
+.choco-types h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #7e3d00;
+  margin-bottom: 40px;
+  font-family: 'Lora', serif;
+}
+
+.choco-types-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+}
+
+.choco-type-card {
+  background: white;
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  border: 2px solid #f0b27a;
+}
+
+.choco-circle-dark,
+.choco-circle-milk,
+.choco-circle-white {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: auto auto 20px;
+}
+
+.choco-circle-dark {
+  background: #5b2c06;
+}
+
+.choco-circle-milk {
+  background: #b9770e;
+}
+
+.choco-circle-white {
+  background: #fff5e6;
+  border: 2px solid #f5cba7;
+}
+
+.choco-type-card h3 {
+  color: #7e3d00;
+  margin-bottom: 12px;
+  font-family: 'Lora', serif;
+}
+
+.choco-type-card p {
+  color: #666;
+  line-height: 1.7;
+}
+
+/* GIFT SECTION */
+.choco-gift {
+  background: white;
+  border: 2px solid #f0b27a;
+  border-radius: 25px;
+  padding: 50px 40px;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.choco-gift h2 {
+  font-size: 2.5rem;
+  color: #7e3d00;
+  margin-bottom: 20px;
+  font-family: 'Lora', serif;
+}
+
+.choco-gift p {
+  max-width: 800px;
+  margin: auto;
+  line-height: 1.8;
+  color: #666;
+}
+
+.choco-gift small {
+  display: block;
+  margin-top: 20px;
+  color: #888;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+
+  .choco-feature {
+    grid-template-columns: 1fr;
+  }
+
+  .choco-feature-image {
+    height: 320px;
+  }
+
+  .choco-title h1 {
+    font-size: 2.3rem;
+  }
+
+  .choco-products-title h2,
+  .choco-types h2,
+  .choco-gift h2 {
+    font-size: 2rem;
+  }
+}
+
+
+
+/* PAGINA PASTELES PERSONALIZADOS */
+
+.order-page {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 40px 0;
+}
+
+/* TITULO PRINCIPAL */
+.order-header h1 {
+  text-align: center;
+  font-family: "Lora", serif;
+  font-size: 34px;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* CARD GENERAL TARJETAS */
+.order-card {
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* STEP HEADER PASOS */
+.step-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.step-title h2 {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  margin: 0;
+}
+
+/* NUMEROS PASOS */
+.step-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #7c3aed;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* COLORES PASOS */
+.step-number.pink { background: #ec4899; }
+.step-number.blue { background: #3b82f6; }
+.step-number.green { background: #22c55e; }
+.step-number.orange { background: #f97316; }
+.step-number.purple { background: #6366f1; }
+
+/* SIZE GRID TAMANO */
+.size-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.size-box {
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.size-box:hover {
+  border-color: #a855f7;
+}
+
+.size-box.active {
+  border-color: #a855f7;
+  background: #f5f3ff;
+}
+
+/* FLAVORS SABORES */
+.flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.flavor-box {
+  border: 2px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.flavor-box:hover {
+  border-color: #ec4899;
+  background: #fff0f6;
+}
+
+/* RADIO LIST */
+.radio-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.radio-list label {
+  border: 2px solid #ddd;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.radio-list label:hover {
+  border-color: #3b82f6;
+}
+
+/* INPUTS */
+.order-card input,
+.order-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.order-card input:focus,
+.order-card textarea:focus {
+  outline: none;
+  border-color: #a855f7;
+}
+
+/* SUMMARY RESUMEN */
+.order-summary {
+  background: #f9fafb;
+  border: 2px solid #ddd;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.order-summary h2 {
+  font-family: "Lora", serif;
+}
+
+.btn-order {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, #ec4899, #a855f7);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-order:hover {
+  opacity: 0.9;
+}
+
+/*   FLAVOR BOX ACTIVE SABOR ACTIVO */
+.flavor-box {
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.flavor-box:hover {
+  border-color: #ec4899;
+}
+
+.flavor-box.active {
+  border-color: #ec4899;
+  background-color: #ffe4ef;
+  color: #be185d;
+  font-weight: 600;
+}
+
+/*   GLASEADO ACTIVE GLASIADO ACTIVO */
+.radio-list label {
+  display: block;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.radio-list label:hover {
+  border-color: #60a5fa;
+}
+
+.radio-list label.active {
+  border-color: #3b82f6;
+  background-color: #dbeafe;
+  font-weight: 600;
 }

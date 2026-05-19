@@ -174,3 +174,42 @@ function verMasReseñas(){
   visibleReviews = allReviews.length;
   renderReviews();
 }
+
+
+// PAGINA PASTELES PERSONALIZADOS
+
+// Seleccion de tamano
+const sizeBoxes = document.querySelectorAll(".size-box");
+
+sizeBoxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    sizeBoxes.forEach((b) => b.classList.remove("active"));
+    box.classList.add("active");
+  });
+});
+
+
+// Seleccion de sabor
+const flavorBoxes = document.querySelectorAll(".flavor-box");
+
+flavorBoxes.forEach((box) => {
+  box.addEventListener("click", () => {
+    flavorBoxes.forEach((b) => b.classList.remove("active"));
+    box.classList.add("active");
+  });
+});
+
+// Seleccion de glaseado
+const frostingLabels = document.querySelectorAll(".radio-list label");
+
+frostingLabels.forEach((label) => {
+  label.addEventListener("click", () => {
+    frostingLabels.forEach((l) => l.classList.remove("active"));
+    label.classList.add("active");
+  });
+});
+
+
+
+// CARRITO 
+
