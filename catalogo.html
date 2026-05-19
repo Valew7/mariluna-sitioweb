@@ -3,12 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catálogo | Mariluna Postres</title>
 
-    <title>Mariluna Postres</title>
-
-    <!-- Lista de Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
     <link
       href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
@@ -19,279 +17,143 @@
   </head>
 
   <body>
-    <!-- Header -->
 
+    <!-- ================= HEADER ================= -->
     <header class="header">
       <div class="navbar container">
-        <!-- Logo -->
+
         <div class="logo">
           <img src="src/logo.png" alt="Mariluna Postres" />
         </div>
 
-        <!-- Menu -->
         <nav class="nav-menu">
-          <a href="#" class="active">Inicio</a>
-          <a href="catalogo.html">Catálogo</a>
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html" class="active">Catálogo</a>
           <a href="sobrenosotros.html">Sobre Nosotros</a>
           <a href="contacto.html">Contacto</a>
         </nav>
 
-        <!-- Botones -->
         <div class="nav-buttons">
           <button class="cart-btn">🛒</button>
-
           <button class="btn btn-primary">🎂 Comenzar Mi Pedido</button>
         </div>
+
       </div>
     </header>
 
-    <!-- Hero Carousel -->
+    <!-- ================= CATALOGO ================= -->
+    <section class="products-section container" style="padding: 60px 0;">
 
-    <section class="hero-carousel">
-      <!-- Primera Imagen -->
-      <div class="slide active">
-        <img
-          src="https://images.unsplash.com/photo-1668398188477-89a80f53d17b?auto=format&fit=crop&w=1400&q=80"
-          alt="Pastel"
-        />
-
-        <div class="overlay"></div>
-
-        <div class="slide-content">
-          <h1>Endulza Tus Momentos Especiales</h1>
-
-          <p>
-            En Mariluna Postres creamos experiencias dulces que hacen de cada
-            celebración un momento inolvidable
-          </p>
-
-          <div class="hero-buttons">
-            <button class="btn btn-primary">🎂 Crear Mi Pastel</button>
-
-            <button class="btn btn-outline-white">Ver Catálogo</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Segunda Imagen -->
-      <div class="slide">
-        <img
-          src="https://images.unsplash.com/photo-1584158531321-2a1fefff2e51?auto=format&fit=crop&w=1400&q=80"
-          alt="Wedding Cake"
-        />
-
-        <div class="overlay"></div>
-
-        <div class="slide-content">
-          <h1>Pasteles de Bodas Elegantes</h1>
-
-          <p>
-            Diseños sofisticados y únicos para el día más importante de tu vida
-          </p>
-
-          <div class="hero-buttons">
-            <button class="btn btn-primary">Ver Catálogo</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tecera Imagen -->
-      <div class="slide">
-        <img
-          src="https://images.unsplash.com/photo-1655411880489-2f0d18785863?auto=format&fit=crop&w=1400&q=80"
-          alt="Chocolate"
-        />
-
-        <div class="overlay"></div>
-
-        <div class="slide-content">
-          <h1>Postres de Chocolate</h1>
-
-          <p>Experiencias de sabor intenso y cremoso</p>
-
-          <div class="hero-buttons">
-            <button class="btn btn-primary">Hacer Pedido</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Flechas -->
-      <button class="arrow left" onclick="prevSlide()">❮</button>
-
-      <button class="arrow right" onclick="nextSlide()">❯</button>
-
-      <!-- Dots -->
-      <div class="dots">
-        <span class="dot active" onclick="showSlide(0)"></span>
-        <span class="dot" onclick="showSlide(1)"></span>
-        <span class="dot" onclick="showSlide(2)"></span>
-      </div>
-    </section>
-
-    <!-- Features Tarjetas -->
-
-    <section class="features container">
-      <div class="feature-card purple">
-        <div class="icon purple-icon">💜</div>
-
-        <h3>Hecho con Amor</h3>
-
-        <p>Cada postre es elaborado con ingredientes frescos y mucho cariño</p>
-      </div>
-
-      <div class="feature-card pink">
-        <div class="icon pink-icon">⭐</div>
-
-        <h3>Personalización Total</h3>
-
-        <p>Diseña tu pastel perfecto eligiendo sabor, tamaño y decoración</p>
-      </div>
-
-      <div class="feature-card blue">
-        <div class="icon blue-icon">⏰</div>
-
-        <h3>Entrega Puntual</h3>
-
-        <p>Recoge en tienda o recibe a domicilio en la fecha que necesites</p>
-      </div>
-    </section>
-
-    <!-- Productos -->
-
-    <section class="products-section container">
       <div class="section-title">
         <h2>Nuestras Especialidades</h2>
-
         <p>Descubre algunas de nuestras deliciosas creaciones</p>
       </div>
 
-      <div class="products">
-        <!-- Producto 1 -->
+      <div class="products catalogo">
+
+        <!-- 1 -->
         <div class="product-card">
           <img
             src="https://images.unsplash.com/photo-1760401697752-ab723885ff27?auto=format&fit=crop&w=800&q=80"
-            alt="Pasteles"
+            alt="Pasteles personalizados"
           />
 
           <div class="product-content product-item-1">
             <h3>Pasteles Personalizados</h3>
-
-            <p>
-              Crea el pastel de tus sueños con nuestro formulario interactivo
-            </p>
-
+            <p>Crea el pastel de tus sueños con nuestro formulario interactivo</p>
             <button class="btn btn-primary btn-pastel">Crear Mi Pastel</button>
           </div>
         </div>
 
-        <!-- Producto 2 -->
-        <div class="product-card product-item-2">
+        <!-- 2 -->
+        <div class="product-card">
           <img
             src="https://images.unsplash.com/photo-1639098620661-3d47712d8a2a?auto=format&fit=crop&w=800&q=80"
             alt="Cupcakes"
           />
 
-          <div class="product-content">
+          <div class="product-content product-item-2">
             <h3>Cupcakes</h3>
-
             <p>Deliciosos cupcakes para cualquier ocasión</p>
-
             <button class="btn btn-outline btn-mas">Ver Más</button>
           </div>
         </div>
 
-        <!-- Producto 3 -->
-        <div class="product-card product-item-3">
+        <!-- 3 -->
+        <div class="product-card">
           <img
             src="https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?auto=format&fit=crop&w=800&q=80"
             alt="Cheesecake"
           />
 
-          <div class="product-content">
+          <div class="product-content product-item-3">
             <h3>Cheesecakes</h3>
-
             <p>Cremosos y suaves, con sabores únicos</p>
-
             <button class="btn btn-outline btn-mas">Ver Más</button>
           </div>
         </div>
 
-        <!-- Producto 4 -->
-        <div class="product-card product-item-4">
+        <!-- 4 -->
+        <div class="product-card">
           <img
             src="https://images.unsplash.com/photo-1700448293876-07dca826c161?auto=format&fit=crop&w=800&q=80"
-            alt="Chocolate"
+            alt="Postres de chocolate"
           />
 
-          <div class="product-content">
+          <div class="product-content product-item-4">
             <h3>Postres de Chocolate</h3>
-
             <p>Para los amantes del chocolate</p>
-
             <button class="btn btn-outline btn-mas">Ver Más</button>
           </div>
         </div>
-      </div>
 
-      <div class="catalogo-btn">
-        <button class="btn btn-outline ">Ver Catálogo Completo</button>
-      </div>
-    </section>
+        <!-- 5 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=800&q=80"
+            alt="Galletas artesanales"
+          />
 
-    <!-- Resenas -->
-
-    <section class="reviews container">
-      <div class="section-title">
-        <h2>Lo Que Dicen Nuestros Clientes</h2>
-        <p>
-          Historias reales de momentos especiales endulzados por Mariluna
-          Postres
-        </p>
-      </div>
-
-      <div id="reviewsGrid" class="reviews-grid"></div>
-
-      <div class="reviews-btn">
-        <button class="btn btn-outline" onclick="verMasReseñas()">
-          Ver Más Reseñas
-        </button>
-      </div>
-
-      <!-- Estadisticas -->
-      <div class="reviews-stats">
-        <div class="stat">
-          <div class="stars">⭐⭐⭐⭐⭐</div>
-          <h3>5.0</h3>
-          <p>Calificación Promedio</p>
+          <div class="product-content product-item-2">
+            <h3>Galletas Artesanales</h3>
+            <p>Galletas frescas hechas con amor</p>
+            <button class="btn btn-outline btn-mas">Ver Más</button>
+          </div>
         </div>
 
-        <div class="stat">
-          <h3>500+</h3>
-          <p>Pasteles Creados</p>
+        <!-- 6 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?auto=format&fit=crop&w=800&q=80"
+            alt="Macarons"
+          />
+
+          <div class="product-content product-item-3">
+            <h3>Macarons</h3>
+            <p>Elegantes macarons franceses</p>
+            <button class="btn btn-outline btn-mas">Ver Más</button>
+          </div>
         </div>
 
-        <div class="stat">
-          <h3>98%</h3>
-          <p>Clientes Satisfechos</p>
-        </div>
       </div>
+
     </section>
 
-    <!-- Llamada a accion -->
 
-    <section class="cta container">
-      <h2>¿Listo para Crear Tu Pastel Perfecto?</h2>
+    <!-- CTA -->
+<section class="cta-catalogo container">
+  <h2>¿Listo para ordenar tu pastel personalizado?</h2>
 
-      <p>
-        Usa nuestro formulario interactivo para diseñar el pastel de tus sueños.
-        ¡Es fácil y divertido!
-      </p>
+  <p>
+    Usa nuestro formulario interactivo para crear el pastel perfecto para tu ocasión especial
+  </p>
 
-      <button class="btn btn-primary">Comenzar Ahora</button>
-    </section>
+  <button class="btn btn-primary">
+    Comenzar Mi Pedido
+  </button>
+</section>
 
-    <!-- Footer -->
-
+    <!-- ================= FOOTER ================= -->
     <footer class="footer">
       <div class="footer-container container">
         <!-- Columna 1 -->
@@ -386,7 +248,5 @@
       </div>
     </footer>
 
-    <!-- JS -->
-    <script src="js/app.js"></script>
   </body>
 </html>

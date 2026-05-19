@@ -19,6 +19,9 @@ body{
   margin:auto;
 }
 
+
+/* PAGINA INDEX */
+
 /* Botones */
 
 .btn{
@@ -47,8 +50,34 @@ body{
   color:#7e22ce;
 }
 
+.btn-pastel{
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-mas{
+    width: 100%;
+  padding: 12px;
+  border: 0.5px solid #999999;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
+  color: rgb(60, 60, 60);
+}
+
+
+.btn-mas,
+.btn-pastel {
+  margin-top: auto;
+}
+
+
 .btn-outline:hover{
-  background:#f3e8ff;
+  background:#fafafa;
 }
 
 .btn-outline-white{
@@ -265,6 +294,10 @@ body{
   border:2px solid #f3e8ff;
 }
 
+.feature-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
 .feature-card h3{
   margin:20px 0;
   font-size:1.7rem;
@@ -273,6 +306,18 @@ body{
 .feature-card p{
   color:#555;
   line-height:1.7;
+}
+
+.feature-card.blue {
+  border: 3px solid #dbeafe;
+}
+
+.feature-card.purple{
+  border: 3px solid #f3e8ff;
+}
+
+.feature-card.pink {
+  border: 3px solid #fce7f3;
 }
 
 .icon{
@@ -332,6 +377,9 @@ body{
   overflow:hidden;
   box-shadow:0 5px 15px rgba(0,0,0,0.08);
   transition:0.3s;
+   display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .product-card:hover{
@@ -346,6 +394,9 @@ body{
 
 .product-content{
   padding:25px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .product-content h3{
@@ -364,7 +415,21 @@ body{
   margin-top:50px;
 }
 
+.product-item-1{
+    background-color: #faf5ff;
+}
 
+.product-item-2{
+    background-color: #fdf2f8;
+}
+
+.product-item-3{
+    background-color: #eff6ff;
+}
+
+.product-item-4{
+    background-color: #fff7ed;
+}
 
 /* CTA - llamado de accion */
 
@@ -528,11 +593,24 @@ body{
   padding:100px 0;
 }
 
-.reviews-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:25px;
-  margin-top:50px;
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* tablet */
+@media (max-width: 900px) {
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* celular */
+@media (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Card - tarjeta principal */
@@ -609,12 +687,19 @@ body{
   border:2px solid #c084fc;
 }
 
-.review-stars{
-  color:#facc15;
-  margin:8px 0;
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-stars {
+  margin: 2px 0 0 0;
+  color: #facc15;
+  font-size: 0.95rem;
 }
 
 .review-text{
+    margin-top: 10px;
   font-size:0.95rem;
   color:#555;
   line-height:1.6;
@@ -646,4 +731,447 @@ body{
 .reviews-btn{
   text-align: center;
   margin-top: 40px;
+}
+
+
+
+
+
+
+/* PAGINA CONTACTO */
+
+.contact-page {
+  padding: 50px 0;
+}
+
+/* Titulo */
+.section-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-title h2 {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Grid principal */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* Formulario + informacion cards tarjetas */
+.form-card,
+.info-card {
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.form-card{
+  background: white;
+border: 1px solid #eee;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* Titutlo formulario */
+.form-card h3 {
+    color: #7B1FA2;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* formulario inputs  */
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 0.5px solid #a56fbd;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 10px;
+font-family: 'Poppins', sans-serif;
+}
+
+form textarea {
+  min-height: 130px;
+}
+
+/* Tarjetas */
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* cada bloque individual */
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+
+  box-shadow: 0 3px 10px rgba(0,0,0,0.04);
+  transition: 0.3s;
+}
+
+.info-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.info-item.purple {
+  border: 2px solid #f3e8ff;
+}
+
+.info-item.purple h4 {
+  color: #7e22ce;
+}
+
+.info-item.blue {
+  border: 2px solid #dbeafe;
+}
+
+.info-item.blue h4 {
+  color: #2563eb;
+}
+
+.info-item.pink {
+  border: 2px solid #fce7f3;
+}
+
+.info-item.pink h4 {
+  color: #db2777;
+}
+
+.info-item.orange {
+  border: 2px solid #ffedd5;
+}
+
+.info-item.orange h4 {
+  color: #ea580c;
+}
+
+/* Iconos */
+
+.orange-icon { 
+    background: #ffedd5; 
+}
+
+.purple-icon {
+  background: #f3e8ff;
+}
+
+.pink-icon {
+  background: #fce7f3;
+}
+
+.blue-icon {
+  background: #dbeafe;
+}
+
+.info-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+/* colores */
+.purple-icon { background: #f3e8ff; }
+.blue-icon { background: #dbeafe; }
+.pink-icon { background: #fce7f3; }
+
+/* Texto */
+.info-text h4 {
+  margin-bottom: 5px;
+  font-size: 1.1rem;
+}
+
+.info-text p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Boton formulario */
+
+.btn-contact {
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  color: white;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+
+
+
+/*  RESPONSIVE CONTACTO */
+
+@media (max-width: 900px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+/* PAGINA SOBRE NOSOTROS */
+
+.box-history{
+    text-align:left;
+    margin-bottom:50px;
+    border: 1px solid #d592b0;
+}
+
+
+.about-card-purple{
+    background: #FAF5FF;
+    border: 2px solid #d9c5ef;
+}
+
+.about-card-purple h3{
+  color: #9810FA;
+}
+
+.about-card-pink{
+    background: #FDF2F8;
+    border: 1px solid #eec4db;
+}
+
+
+.about-card-pink h3{
+    color: #CC005C;
+}
+
+.about-card-blue{
+    background: #EFF6FF;
+    border: 1px solid #d6e8ff;
+}
+
+.about-card-blue h3{
+    color: #7DAAFE;
+}
+
+.about-card-orange{
+    background: #FFF7ED;
+    border: 1px solid #fce5c9;
+}
+
+.about-card-orange h3{
+    color: #F54900;
+}
+
+.purple-icon-about{
+  background: #E9D4FF;
+}
+
+
+.pink-icon-about{
+  background:#FCCEE8;
+}
+
+.blue-icon-about{
+  background:#BEDBFF;
+}
+
+.orange-icon-about{
+  background:#FFD6A7;
+}
+
+
+
+
+/* PAGINA CATALOGO */
+
+.catalogo{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+@media (max-width: 900px){
+  .catalogo{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px){
+  .catalogo{
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* CTA Catalogo */
+.cta-catalogo {
+  margin: 80px auto;
+  text-align: center;
+  background: linear-gradient(to right, #f3e8ff, #ffe4f1, #dbeafe);
+  padding: 70px 30px;
+  border-radius: 30px;
+}
+
+.cta-catalogo h2 {
+  font-family: 'Lora', serif;
+  font-size: 2.5rem;
+  color: #7e22ce;
+  margin-bottom: 15px;
+}
+
+.cta-catalogo p {
+  max-width: 700px;
+  margin: auto;
+  margin-bottom: 25px;
+  color: #555;
+  line-height: 1.8;
+}
+
+
+
+/* PAGINA CHEESECAKES */
+
+
+.cheesecake-hero{
+  padding:80px 0;
+}
+
+.cheesecake-feature{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:center;
+  background:linear-gradient(to right,#eff6ff,#ecfeff);
+  padding:40px;
+  border-radius:30px;
+  border:2px solid #bfdbfe;
+}
+
+.feature-image img{
+  width:100%;
+  height:450px;
+  object-fit:cover;
+  border-radius:20px;
+}
+
+.feature-info h3{
+  font-size:2.5rem;
+  color:#2563eb;
+  margin-bottom:25px;
+  font-family:'Lora', serif;
+}
+
+.feature-list{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.feature-item{
+  background:white;
+  padding:16px;
+  border-radius:12px;
+  border:2px solid #dbeafe;
+  color:#444;
+}
+
+.cheesecake-card{
+  background:#f0f9ff;
+}
+
+.cheesecake-card h4{
+  color:#2563eb;
+  font-size:1.8rem;
+  margin:10px 0;
+  font-family:'Lora', serif;
+}
+
+.stars{
+  color:#facc15;
+  font-size:1.1rem;
+}
+
+.cheesecake-info{
+  margin-top:80px;
+}
+
+.info-box{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+}
+
+.info-card-cheese{
+  background:white;
+  padding:30px;
+  border-radius:20px;
+  border:2px solid #bfdbfe;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.info-card-cheese h3{
+  color:#2563eb;
+  margin-bottom:15px;
+  font-size:1.5rem;
+}
+
+.info-card-cheese p{
+  color:#555;
+  line-height:1.7;
+}
+
+@media(max-width:900px){
+
+  .cheesecake-feature{
+    grid-template-columns:1fr;
+  }
+
+  .info-box{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .feature-info h3{
+    font-size:2rem;
+  }
+
 }
