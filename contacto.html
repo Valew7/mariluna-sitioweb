@@ -15,11 +15,9 @@
   </head>
 
   <body>
-
     <!-- Header -->
     <header class="header">
       <div class="navbar container">
-
         <div class="logo">
           <img src="src/logo.png" alt="Mariluna Postres" />
         </div>
@@ -32,23 +30,23 @@
         </nav>
 
         <div class="nav-buttons">
-          <button class="cart-btn">🛒</button>
+          <button class="cart-btn" id="open-cart">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
           <button class="btn btn-primary">🎂 Comenzar Mi Pedido</button>
         </div>
-
       </div>
     </header>
 
     <!-- Contacto -->
     <section class="contact-page container">
-
       <div class="section-title">
         <h2>Contáctanos</h2>
         <p>¿Tienes preguntas? Estamos aquí para ayudarte</p>
       </div>
 
       <div class="contact-grid">
-
         <!-- Formulario -->
         <div class="form-card">
           <h3>Envíanos un Mensaje</h3>
@@ -64,9 +62,14 @@
             <input type="tel" placeholder="(555) 123-4567" />
 
             <label>Mensaje</label>
-            <textarea placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+            <textarea
+              placeholder="Cuéntanos cómo podemos ayudarte..."
+            ></textarea>
 
-            <button class="btn-contact btn-primary" style="width:100%; margin-top:10px;">
+            <button
+              class="btn-contact btn-primary"
+              style="width: 100%; margin-top: 10px"
+            >
               Enviar Mensaje
             </button>
           </form>
@@ -74,7 +77,6 @@
 
         <!-- Informacion -->
         <div class="info-card">
-
           <!-- Ubicacion -->
           <div class="info-item pink">
             <div class="info-icon pink-icon">📍</div>
@@ -110,15 +112,13 @@
               <p>Lun - Vie: 9AM - 6PM<br />Sábados: 10AM - 4PM</p>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
 
     <!-- Footer -->
 
-     <footer class="footer">
+    <footer class="footer">
       <div class="footer-container container">
         <!-- Columna 1 -->
         <div class="footer-column">
@@ -212,5 +212,38 @@
       </div>
     </footer>
 
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer" id="cart-drawer">
+      <!-- HEADER -->
+      <div class="cart-header">
+        <h2>🛒 Tu Carrito (<span id="drawer-count">0</span> productos)</h2>
+
+        <button class="close-cart" id="close-cart">✕</button>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="cart-items" id="cart-items">
+        <div class="empty-cart">
+          <div class="empty-icon">🛒</div>
+          <p>Tu carrito está vacío</p>
+          <span>Agrega productos de nuestro catálogo</span>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+
+        <button class="checkout-btn">Proceder al Pago</button>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
   </body>
 </html>
