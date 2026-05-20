@@ -32,7 +32,10 @@
         </nav>
 
         <div class="nav-buttons">
-          <button class="cart-btn">🛒</button>
+          <button class="cart-btn" id="open-cart">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
           <button class="btn btn-primary">🎂 Comenzar Mi Pedido</button>
         </div>
       </div>
@@ -360,5 +363,39 @@
         <span> Hecho con amor y azúcar 🧁 </span>
       </div>
     </footer>
+
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer" id="cart-drawer">
+      <!-- HEADER -->
+      <div class="cart-header">
+        <h2>🛒 Tu Carrito (<span id="drawer-count">0</span> productos)</h2>
+
+        <button class="close-cart" id="close-cart">✕</button>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="cart-items" id="cart-items">
+        <div class="empty-cart">
+          <div class="empty-icon">🛒</div>
+          <p>Tu carrito está vacío</p>
+          <span>Agrega productos de nuestro catálogo</span>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+
+        <button class="checkout-btn">Proceder al Pago</button>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

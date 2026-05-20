@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Finalizar Pedido | Mariluna Postres</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+
+    <div class="navbar container">
+
+      <div class="logo">
+        <img src="src/logo.png" alt="Mariluna Postres" />
+      </div>
+
+      <nav class="nav-menu">
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="sobrenosotros.html">Sobre Nosotros</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="nav-buttons">
+
+        <button class="cart-btn" id="open-cart">
+          🛒
+          <span class="cart-count" id="cart-count">0</span>
+        </button>
+
+        <button class="btn btn-primary">
+          🎂 Comenzar Mi Pedido
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- PAGE -->
+  <section class="checkout-page container">
+
+    <div class="checkout-title">
+      <h1>Finalizar Pedido</h1>
+
+      <p>
+        Completa tu información para enviar el pedido por WhatsApp
+      </p>
+    </div>
+
+    <div class="checkout-grid">
+
+      <!-- FORM -->
+      <div class="checkout-card">
+
+        <h2>Información de Contacto</h2>
+
+        <form id="checkout-form">
+
+          <div class="checkout-input">
+
+            <label>Nombre Completo *</label>
+
+            <input
+              type="text"
+              id="nombre"
+              placeholder="Tu nombre completo"
+              required
+            />
+
+          </div>
+
+          <div class="checkout-input">
+
+            <label>Teléfono *</label>
+
+            <input
+              type="tel"
+              id="telefono"
+              placeholder="3001234567"
+              required
+            />
+
+          </div>
+
+          <div class="checkout-input">
+
+            <label>Correo Electrónico *</label>
+
+            <input
+              type="email"
+              id="correo"
+              placeholder="correo@email.com"
+              required
+            />
+
+          </div>
+
+          <div class="checkout-input">
+
+            <label>Dirección *</label>
+
+            <textarea
+              id="direccion"
+              placeholder="Calle, barrio, ciudad..."
+              required
+            ></textarea>
+
+          </div>
+
+          <div class="checkout-input">
+
+            <label>Notas Adicionales</label>
+
+            <textarea
+              id="notas"
+              placeholder="Instrucciones especiales..."
+            ></textarea>
+
+          </div>
+
+          <button type="submit" class="btn-whatsapp">
+            📲 Confirmar y Enviar por WhatsApp
+          </button>
+
+        </form>
+
+      </div>
+
+      <!-- SUMMARY -->
+      <div class="checkout-card">
+
+        <h2>Resumen del Pedido</h2>
+
+        <div id="checkout-items"></div>
+
+        <div class="checkout-total">
+
+          <div class="checkout-total-row">
+            <span>Total:</span>
+
+            <strong id="checkout-total">
+              $0
+            </strong>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-container container">
+
+      <div class="footer-column">
+        <img src="src/logo.png" alt="Logo" class="footer-logo" />
+
+        <p>
+          Creando momentos dulces y memorables desde el corazón.
+        </p>
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Enlaces Rápidos</h3>
+
+        <ul>
+          <li><a href="#">Inicio</a></li>
+          <li><a href="#">Catálogo</a></li>
+          <li><a href="#">Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Servicios</h3>
+
+        <ul>
+          <li>Pasteles Personalizados</li>
+          <li>Cupcakes</li>
+          <li>Cheesecakes</li>
+          <li>Macarons</li>
+        </ul>
+
+      </div>
+
+      <div class="footer-column">
+
+        <h3>Contáctanos</h3>
+
+        <ul>
+          <li>📍 Bogotá, Colombia</li>
+          <li>📞 +57 300 000 0000</li>
+          <li>✉️ info@marilunapostres.com</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+  <!-- JS -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>

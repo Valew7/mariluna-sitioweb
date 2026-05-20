@@ -17,7 +17,6 @@
   </head>
 
   <body>
-
     <!-- ================= HEADER ================= -->
     <header class="header">
       <div class="navbar container">
@@ -33,37 +32,42 @@
         </nav>
 
         <div class="nav-buttons">
-          <button class="cart-btn">🛒</button>
+          <button class="cart-btn" id="open-cart">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
           <button class="btn btn-primary">🎂 Comenzar Mi Pedido</button>
         </div>
       </div>
     </header>
 
     <!-- ================= ABOUT ================= -->
-    <section class="container" style="padding: 60px 0;">
-
+    <section class="container" style="padding: 60px 0">
       <!-- Header -->
       <div class="section-title">
         <h2>Sobre Nosotros</h2>
         <p>
-          Mariluna Postres nació del amor por la repostería y el deseo de hacer felices a las personas
+          Mariluna Postres nació del amor por la repostería y el deseo de hacer
+          felices a las personas
         </p>
       </div>
 
       <!-- Historia -->
       <div class="feature-card box-history">
-        <h3 style="color:#db2777;">Nuestra Historia</h3>
+        <h3 style="color: #db2777">Nuestra Historia</h3>
 
-        <p style="margin-bottom:15px;">
-          Mariluna Postres comenzó como un sueño en la cocina de casa, donde cada receta se perfeccionaba
-          con dedicación y amor. Lo que empezó como pasteles para familiares y amigos, se convirtió en
-          una pasión por crear momentos dulces para toda la comunidad.
+        <p style="margin-bottom: 15px">
+          Mariluna Postres comenzó como un sueño en la cocina de casa, donde
+          cada receta se perfeccionaba con dedicación y amor. Lo que empezó como
+          pasteles para familiares y amigos, se convirtió en una pasión por
+          crear momentos dulces para toda la comunidad.
         </p>
 
         <p>
-          Hoy en día, seguimos trabajando con la misma dedicación del primer día, usando ingredientes
-          de la más alta calidad y técnicas artesanales para crear postres que no solo se ven hermosos,
-          sino que saben aún mejor.
+          Hoy en día, seguimos trabajando con la misma dedicación del primer
+          día, usando ingredientes de la más alta calidad y técnicas artesanales
+          para crear postres que no solo se ven hermosos, sino que saben aún
+          mejor.
         </p>
       </div>
 
@@ -73,14 +77,13 @@
       </div>
 
       <div class="features">
-
         <div class="feature-card about-card-purple">
           <div class="icon purple-icon-about">💜</div>
           <h3>Pasión</h3>
           <p>Amamos lo que hacemos y se nota en cada detalle</p>
         </div>
 
-        <div class="feature-card  about-card-pink">
+        <div class="feature-card about-card-pink">
           <div class="icon pink-icon-about">⭐</div>
           <h3>Calidad</h3>
           <p>Solo usamos los mejores ingredientes</p>
@@ -97,22 +100,21 @@
           <h3>Creatividad</h3>
           <p>Innovamos constantemente en sabores y diseños</p>
         </div>
-
       </div>
 
       <!-- Misión -->
       <div class="cta">
         <h2>Nuestra Misión</h2>
         <p>
-          Crear experiencias dulces memorables que celebren los momentos más importantes de la vida,
-          desde cumpleaños hasta bodas, siempre con la más alta calidad y un toque personal único.
+          Crear experiencias dulces memorables que celebren los momentos más
+          importantes de la vida, desde cumpleaños hasta bodas, siempre con la
+          más alta calidad y un toque personal único.
         </p>
       </div>
-
     </section>
 
     <!-- ================= FOOTER ================= -->
-        <footer class="footer">
+    <footer class="footer">
       <div class="footer-container container">
         <!-- Columna 1 -->
         <div class="footer-column">
@@ -206,5 +208,38 @@
       </div>
     </footer>
 
+    <!-- CART OVERLAY -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- CART DRAWER -->
+    <div class="cart-drawer" id="cart-drawer">
+      <!-- HEADER -->
+      <div class="cart-header">
+        <h2>🛒 Tu Carrito (<span id="drawer-count">0</span> productos)</h2>
+
+        <button class="close-cart" id="close-cart">✕</button>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="cart-items" id="cart-items">
+        <div class="empty-cart">
+          <div class="empty-icon">🛒</div>
+          <p>Tu carrito está vacío</p>
+          <span>Agrega productos de nuestro catálogo</span>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+
+        <button class="checkout-btn">Proceder al Pago</button>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

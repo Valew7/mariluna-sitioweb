@@ -211,5 +211,339 @@ frostingLabels.forEach((label) => {
 
 
 
-// CARRITO 
 
+
+
+// CARRITO DE COMPRAS
+
+
+const openCartBtn = document.getElementById("open-cart");
+const closeCartBtn = document.getElementById("close-cart");
+
+const cartDrawer = document.getElementById("cart-drawer");
+const cartOverlay = document.getElementById("cart-overlay");
+
+const cartItemsContainer = document.getElementById("cart-items");
+
+const cartCount = document.getElementById("cart-count");
+const drawerCount = document.getElementById("drawer-count");
+
+const cartTotal = document.getElementById("cart-total");
+
+/* CART */
+
+let cart = [];
+
+/* OPEN */
+
+openCartBtn.addEventListener("click", () => {
+  cartDrawer.classList.add("active");
+  cartOverlay.classList.add("active");
+});
+
+/* CLOSE */
+
+closeCartBtn.addEventListener("click", closeCart);
+
+cartOverlay.addEventListener("click", closeCart);
+
+function closeCart() {
+  cartDrawer.classList.remove("active");
+  cartOverlay.classList.remove("active");
+}
+
+/* ADD TO CART */
+
+const addButtons = document.querySelectorAll(
+  ".btn-cart-choco, .btn-cart-cookie, .btn-cart-cupcake"
+);
+
+addButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+
+    const card = button.closest(
+      ".choco-card, .cookie-card, .cupcake-card"
+    );
+
+    const name = card.querySelector("h3").textContent;
+
+    const priceText = card.querySelector(
+      ".choco-price, .cookies-price-row h4, .cupcake-price"
+    ).textContent;
+
+    const image = card.querySelector("img").src;
+
+    const price = Number(
+      priceText.replace("$", "").replace(/\./g, "")
+    );
+
+    const existingProduct = cart.find(
+      (item) => item.name === name
+    );
+
+    if (existingProduct) {
+      existingProduct.quantity++;
+    } else {
+      cart.push({
+        name,
+        price,
+        image,
+        quantity: 1,
+      });
+    }
+
+    updateCart();
+  });
+});
+
+/* UPDATE CART */
+
+function updateCart() {
+
+  cartItemsContainer.innerHTML = "";
+
+  if (cart.length === 0) {
+
+    cartItemsContainer.innerHTML = `
+      <div class="empty-cart">
+        <div class="empty-icon">🛒</div>
+        <p>Tu carrito está vacío</p>
+        <span>Agrega productos de nuestro catálogo</span>
+      </div>
+    `;
+
+  } else {
+
+    cart.forEach((item, index) => {
+
+      cartItemsContainer.innerHTML += `
+        <div class="cart-item">
+
+          <img src="${item.image}" alt="${item.name}">
+
+          <div class="cart-info">
+
+            <h4>${item.name}</h4>
+
+            <div class="cart-price">
+              $${(item.price * item.quantity).toLocaleString("es-CO")}
+            </div>
+
+            <div class="quantity-controls">
+
+              <button onclick="decreaseQuantity(${index})">
+                -
+              </button>
+
+              <span>${item.quantity}</span>
+
+              <button onclick="increaseQuantity(${index})">
+                +
+              </button>
+
+            </div>
+
+            <button
+              class="remove-btn"
+              onclick="removeItem(${index})"
+            >
+              Eliminar
+            </button>
+
+          </div>
+
+        </div>
+      `;
+    });
+  }
+
+  const totalItems = cart.reduce(
+    (acc, item) => acc + item.quantity,
+    0
+  );
+
+  const totalPrice = cart.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+
+  cartCount.textContent = totalItems;
+  drawerCount.textContent = totalItems;
+
+  cartTotal.textContent =
+    "$" + totalPrice.toLocaleString("es-CO");
+}
+
+/* QUANTITY */
+
+function increaseQuantity(index) {
+  cart[index].quantity++;
+  updateCart();
+}
+
+function decreaseQuantity(index) {
+
+  if (cart[index].quantity > 1) {
+    cart[index].quantity--;
+  } else {
+    cart.splice(index, 1);
+  }
+
+  updateCart();
+}
+
+/* REMOVE */
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  updateCart();
+}
+
+
+// PAGINA PAGO
+
+/* =========================
+   CHECKOUT
+========================= */
+
+const checkoutItems = document.getElementById("checkout-items");
+const checkoutTotal = document.getElementById("checkout-total");
+const checkoutForm = document.getElementById("checkout-form");
+
+if (checkoutItems && checkoutTotal) {
+
+  let cart = JSON.parse(localStorage.getItem("mariluna-cart")) || [];
+
+  function renderCheckout() {
+
+    checkoutItems.innerHTML = "";
+
+    let total = 0;
+
+    cart.forEach((item) => {
+
+      total += item.price * item.quantity;
+
+      checkoutItems.innerHTML += `
+      
+        <div class="checkout-product">
+
+          <img src="${item.image}" alt="${item.name}" />
+
+          <div class="checkout-product-info">
+
+            <h4>${item.name}</h4>
+
+            <p>Cantidad: ${item.quantity}</p>
+
+            <p class="checkout-price">
+              $${(item.price * item.quantity).toLocaleString("es-CO")}
+            </p>
+
+          </div>
+
+        </div>
+
+      `;
+    });
+
+    checkoutTotal.textContent =
+      "$" + total.toLocaleString("es-CO");
+  }
+
+  renderCheckout();
+
+  /* FORM */
+
+  checkoutForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const nombre =
+      document.getElementById("nombre").value;
+
+    const telefono =
+      document.getElementById("telefono").value;
+
+    const correo =
+      document.getElementById("correo").value;
+
+    const direccion =
+      document.getElementById("direccion").value;
+
+    const notas =
+      document.getElementById("notas").value;
+
+    let mensaje =
+      "🍰 *NUEVO PEDIDO - MARILUNA POSTRES* %0A%0A";
+
+    mensaje +=
+      "*INFORMACIÓN DEL CLIENTE* %0A";
+
+    mensaje +=
+      "👤 Nombre: " + nombre + "%0A";
+
+    mensaje +=
+      "📞 Teléfono: " + telefono + "%0A";
+
+    mensaje +=
+      "📧 Correo: " + correo + "%0A";
+
+    mensaje +=
+      "📍 Dirección: " + direccion + "%0A";
+
+    if (notas.trim() !== "") {
+
+      mensaje +=
+        "📝 Notas: " + notas + "%0A";
+
+    }
+
+    mensaje += "%0A";
+    mensaje += "*PRODUCTOS* %0A";
+
+    let total = 0;
+
+    cart.forEach((item, index) => {
+
+      total += item.price * item.quantity;
+
+      mensaje +=
+        "%0A" +
+        (index + 1) +
+        ". " +
+        item.name +
+        "%0A";
+
+      mensaje +=
+        "Cantidad: " +
+        item.quantity +
+        "%0A";
+
+      mensaje +=
+        "Subtotal: $" +
+        (item.price * item.quantity).toLocaleString("es-CO") +
+        "%0A";
+
+    });
+
+    mensaje +=
+      "%0A💰 *TOTAL: $" +
+      total.toLocaleString("es-CO") +
+      "*";
+
+    /* TU NUMERO */
+
+    const numero = "573001234567";
+
+    const url =
+      "https://wa.me/" +
+      numero +
+      "?text=" +
+      mensaje;
+
+    window.open(url, "_blank");
+
+  });
+
+}
