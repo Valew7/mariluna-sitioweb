@@ -36,7 +36,12 @@
             🛒
             <span class="cart-count" id="cart-count">0</span>
           </button>
-          <button class="btn btn-primary">🎂 Comenzar Mi Pedido</button>
+           <button
+            class="btn btn-primary"
+            onclick="window.location.href = 'pastelespersonalizados.html'"
+          >
+            🎂 Comenzar Mi Pedido
+          </button>
         </div>
       </div>
     </header>
@@ -113,7 +118,8 @@
       </div>
     </section>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- FOOTER  -->
+   
     <footer class="footer">
       <div class="footer-container container">
         <!-- Columna 1 -->
@@ -129,9 +135,9 @@
 
           <ul>
             <li><a href="#">Inicio</a></li>
-            <li><a href="#">Catálogo</a></li>
-            <li><a href="#">Nosotros</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="sobrenosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
           </ul>
         </div>
 
@@ -140,11 +146,11 @@
           <h3>Servicios</h3>
 
           <ul>
-            <li>Pasteles Personalizados</li>
-            <li>Cupcakes</li>
-            <li>Cheesecakes</li>
-            <li>Macarons</li>
-            <li>Galletas Decoradas</li>
+            <li><a href="pastelespersonalizados.html">Pasteles Personalizados</a></li>
+  <li><a href="cupcakes.html">Cupcakes</a></li>
+  <li><a href="cheesecakes.html">Cheesecakes</a></li>
+  <li><a href="macarons.html">Macarons</a></li>
+  <li><a href="galletasartesanales.html">Galletas Decoradas</a></li>
           </ul>
         </div>
 
@@ -161,7 +167,7 @@
           <div class="social-icons">
             <!-- Facebook -->
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/mariluna.postres.5"
               target="_blank"
               aria-label="Facebook"
             >
@@ -180,7 +186,7 @@
 
             <!-- Instagram -->
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/mariluna_postres/"
               target="_blank"
               aria-label="Instagram"
             >
@@ -208,7 +214,21 @@
       </div>
     </footer>
 
-    <!-- CART OVERLAY -->
+
+
+      <!-- FOOTER -->
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <strong id="cart-total">$0</strong>
+        </div>
+
+        <button class="checkout-btn">Proceder al Pago</button>
+      </div>
+    </div>
+
+
+  <!-- CART OVERLAY -->
     <div class="cart-overlay" id="cart-overlay"></div>
 
     <!-- CART DRAWER -->
@@ -228,17 +248,6 @@
           <span>Agrega productos de nuestro catálogo</span>
         </div>
       </div>
-
-      <!-- FOOTER -->
-      <div class="cart-footer">
-        <div class="cart-total">
-          <span>Total:</span>
-          <strong id="cart-total">$0</strong>
-        </div>
-
-        <button class="checkout-btn">Proceder al Pago</button>
-      </div>
-    </div>
 
     <script src="js/app.js"></script>
   </body>

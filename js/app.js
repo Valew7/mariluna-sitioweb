@@ -79,7 +79,37 @@ const allReviews = [
     date: "Agosto 2024",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400",
     productImage: "https://images.unsplash.com/photo-1776722092640-d8caee121219?q=80&w=687&auto=format&fit=crop",
+  }, 
+  {
+    id: 4,
+    name: "Sebastián Ruiz",
+    event: "Corporativo",
+    rating: 5,
+    comment: "Ordenamos cupcakes para nuestro evento corporativo y fueron un éxito total. La entrega fue puntual y la calidad impecable. Muy profesionales en todo el proceso.",
+    date: "Julio 2024",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80",
+    productImage: "https://images.unsplash.com/photo-1551404973-761c83cd8339?w=800"
   },
+   {
+    id: 5,
+    name: "Andrea Catalina Moreno",
+    event: "Baby Shower",
+    rating: 5,
+    comment: "El pastel para mi baby shower fue adorable y delicioso. El diseño en tonos pasteles quedó hermoso y el sabor de red velvet con queso crema fue la combinación perfecta.",
+    date: "Junio 2024",
+    avatar: "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?auto=format&fit=crop&w=400&q=80",
+    productImage: "https://images.unsplash.com/photo-1659654155120-54c0b8e61406?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    id: 6,
+    name: "Diego Fernando Castro",
+    event: "Graduación",
+    rating: 5,
+    comment: "Excelente servicio y un pastel increíble para mi graduación. La personalización fue exacta a lo que pedí y el sabor de tres leches estaba para chuparse los dedos.",
+    date: "Mayo 2024",
+    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80",
+    productImage: "https://images.unsplash.com/photo-1758682016284-78f5266d5743?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D=crop&w=800&q=80"
+  }
 ];
 
 let visibleReviews = 3;
@@ -123,6 +153,11 @@ renderReviews();
 function verMasReseñas() {
   visibleReviews = allReviews.length;
   renderReviews();
+
+  const btnContainer = document.querySelector(".reviews-btn");
+  if (btnContainer) {
+    btnContainer.style.display = "none";
+  }
 }
 
 /* PASTELES PERSONALIZADOS */
