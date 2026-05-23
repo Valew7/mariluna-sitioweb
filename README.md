@@ -6,7 +6,7 @@
 
 ## 🎨 Herramienta de prototipado
 Herramienta utilizada: **Figma Make**  
-🔗 [Ver prototipo interactivo](https://www.figma.com/make/STUOofQywn0h2Whqz80wGy/Mariluna-Postres---Pagina-Principal)
+🔗 [Ver prototipo interactivo](https://www.figma.com/make/STUOofQywn0h2Whqz80wGy/Mariluna-Postres---Pagina-Principal?code-node-id=0-9&p=f&fullscreen=1)
 
 ## 📁 Estructura
 - `css/` — Estilos con CSS3
