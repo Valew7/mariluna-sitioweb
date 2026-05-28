@@ -1,30 +1,20 @@
-# 🍰 Mariluna Postres — Sitio Web
+# GA6-220501123-AA3-EV01 — Diseño Frontend
 
-Repositorio del sitio web oficial de **Mariluna Postres**. Este proyecto contiene el código fuente de la página principal, construida a partir del diseño en Figma.
+**Programa:** Programación de aplicaciones y servicios para la nube  
+**Proyecto:** Mariluna Postres — Sitio Web  
+**Integrantes:** Valentina Hinestroza Pineda — Michelle Duque  - Camilo Durán 
 
----
+## 🎨 Herramienta de prototipado
+Herramienta utilizada: **Figma Make**  
+🔗 [Ver prototipo interactivo](https://www.figma.com/make/STUOofQywn0h2Whqz80wGy/Mariluna-Postres---Pagina-Principal?code-node-id=0-9&p=f&fullscreen=1)
 
-## 🎨 Diseño en Figma
+## 📁 Estructura
+- `css/` — Estilos con CSS3
+- `js/` — Scripts JavaScript
+- `prototipo/` — Capturas del diseño (Desktop, Tablet, Mobile)
+- 10 páginas HTML
 
-El diseño de referencia para el desarrollo se encuentra aquí:
-
-👉 **[Mariluna Postres — Página Principal](https://www.figma.com/make/STUOofQywn0h2Whqz80wGy/Mariluna-Postres---Pagina-Principal?t=2JqHnodmhoeFMZTe-1)**
-
-> Antes de hacer cambios visuales, consulta el Figma para mantener consistencia con el diseño.
-
----
-
-
-
-> *La estructura se irá actualizando a medida que avance el proyecto.*
-
----
-
-## 🚀 Cómo empezar
-
-```bash
-git clone https://github.com/Valew7/mariluna-sitioweb.git
-cd mariluna-sitioweb
-```
-
-
+## 🛠️ Tecnologías
+- HTML5
+- CSS3
+- JavaScript
