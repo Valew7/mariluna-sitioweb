@@ -14,6 +14,7 @@ Usamos Figma para diseñar las vistas antes de ponernos a codear. Ahí definimos
 
 En la carpeta `prototipo/` están las capturas del diseño en desktop, tablet y móvil, más el flujo de navegación.
 
+Para ver los colores y el diseño visual, revisar las capturas en `prototipo/`
 ---
 
 ## Páginas del sitio
