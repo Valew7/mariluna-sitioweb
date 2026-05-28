@@ -479,3 +479,15 @@ if (checkoutItems && checkoutTotal) {
 /* INICIAR CARRITO */
 
 updateCartUI();
+/* AÑADIR MENU HAMBURGUER  */
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('nav-menu');
+if (hamburger && navMenu) {
+  hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    hamburger.textContent = navMenu.classList.contains('open') ? '✕' : '☰';
+  const navPedido = document.getElementById('nav-pedido');
+    if(navPedido) navPedido.style.display = navMenu.classList.contains('open') ? 'block' : 'none';
+  });
+}
+/* TERMINA */
