@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mariluna Postres</title>
+
+    <!-- Lista de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+
+    <header class="header">
+      <div class="navbar container">
+        <!-- Logo -->
+        <div class="logo">
+          <img src="src/logo.png" alt="Mariluna Postres" />
+        </div>
+
+        <!-- Menu -->
+        <nav class="nav-menu">
+          <a href="#" class="active">Inicio</a>
+          <a href="catalogo.html">Catálogo</a>
+          <a href="sobrenosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <!-- Botones -->
+        <div class="nav-buttons">
+            <button class="cart-btn" id="open-cart">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+
+           <button
+            class="btn btn-primary"
+            onclick="window.location.href = 'pastelespersonalizados.html'"
+          >
+            🎂 Comenzar Mi Pedido
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Carousel -->
+
+    <section class="hero-carousel">
+      <!-- Primera Imagen -->
+      <div class="slide active">
+        <img
+          src="https://images.unsplash.com/photo-1668398188477-89a80f53d17b?auto=format&fit=crop&w=1400&q=80"
+          alt="Pastel"
+        />
+
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+          <h1>Endulza Tus Momentos Especiales</h1>
+
+          <p>
+            En Mariluna Postres creamos experiencias dulces que hacen de cada
+            celebración un momento inolvidable
+          </p>
+
+          <div class="hero-buttons">
+             <button
+            class="btn btn-primary"
+            onclick="window.location.href = 'pastelespersonalizados.html'"
+          >
+            🎂 Comenzar Mi Pedido
+          </button>
+
+            <button class="btn btn-outline-white" onclick="window.location.href = 'catalogo.html'">Ver Catálogo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Segunda Imagen -->
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1584158531321-2a1fefff2e51?auto=format&fit=crop&w=1400&q=80"
+          alt="Wedding Cake"
+        />
+
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+          <h1>Pasteles de Bodas Elegantes</h1>
+
+          <p>
+            Diseños sofisticados y únicos para el día más importante de tu vida
+          </p>
+
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="window.location.href = 'catalogo.html'">Ver Catálogo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tecera Imagen -->
+      <div class="slide">
+        <img
+          src="https://images.unsplash.com/photo-1655411880489-2f0d18785863?auto=format&fit=crop&w=1400&q=80"
+          alt="Chocolate"
+        />
+
+        <div class="overlay"></div>
+
+        <div class="slide-content">
+          <h1>Postres de Chocolate</h1>
+
+          <p>Experiencias de sabor intenso y cremoso</p>
+
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="window.location.href = 'postresdechocolate.html'">Hacer Pedido</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flechas -->
+      <button class="arrow left" onclick="prevSlide()">❮</button>
+
+      <button class="arrow right" onclick="nextSlide()">❯</button>
+
+      <!-- Dots -->
+      <div class="dots">
+        <span class="dot active" onclick="showSlide(0)"></span>
+        <span class="dot" onclick="showSlide(1)"></span>
+        <span class="dot" onclick="showSlide(2)"></span>
+      </div>
+    </section>
+
+    <!-- Features Tarjetas -->
+
+    <section class="features container">
+      <div class="feature-card purple">
+        <div class="icon purple-icon">💜</div>
+
+        <h3>Hecho con Amor</h3>
+
+        <p>Cada postre es elaborado con ingredientes frescos y mucho cariño</p>
+      </div>
+
+      <div class="feature-card pink">
+        <div class="icon pink-icon">⭐</div>
+
+        <h3>Personalización Total</h3>
+
+        <p>Diseña tu pastel perfecto eligiendo sabor, tamaño y decoración</p>
+      </div>
+
+      <div class="feature-card blue">
+        <div class="icon blue-icon">⏰</div>
+
+        <h3>Entrega Puntual</h3>
+
+        <p>Recoge en tienda o recibe a domicilio en la fecha que necesites</p>
+      </div>
+    </section>
+
+    <!-- Productos -->
+
+    <section class="products-section container">
+      <div class="section-title">
+        <h2>Nuestras Especialidades</h2>
+
+        <p>Descubre algunas de nuestras deliciosas creaciones</p>
+      </div>
+
+      <div class="products">
+        <!-- Producto 1 -->
+        <div class="product-card">
+          <img
+            src="https://images.unsplash.com/photo-1760401697752-ab723885ff27?auto=format&fit=crop&w=800&q=80"
+            alt="Pasteles"
+          />
+
+          <div class="product-content product-item-1">
+            <h3>Pasteles Personalizados</h3>
+
+            <p>
+              Crea el pastel de tus sueños con nuestro formulario interactivo
+            </p>
+
+            <button class="btn btn-primary btn-pastel" onclick="window.location.href = 'pastelespersonalizados.html'">Crear Mi Pastel</button>
+          </div>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card product-item-2">
+          <img
+            src="https://images.unsplash.com/photo-1711546911752-719d525d6fb4?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Cupcakes"
+          />
+
+          <div class="product-content">
+            <h3>Cupcakes</h3>
+
+            <p>Deliciosos cupcakes para cualquier ocasión</p>
+
+            <button class="btn btn-outline btn-mas" onclick="window.location.href = 'cupcakes.html'">Ver Más</button>
+          </div>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card product-item-3">
+          <img
+            src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80"
+            alt="Cheesecake"
+          />
+
+          <div class="product-content">
+            <h3>Cheesecakes</h3>
+
+            <p>Cremosos y suaves, con sabores únicos</p>
+
+            <button class="btn btn-outline btn-mas" onclick="window.location.href = 'cheesecakes.html'">Ver Más</button>
+          </div>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card product-item-4">
+          <img
+            src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?q=80&w=803&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Chocolate"
+          />
+
+          <div class="product-content">
+            <h3>Postres de Chocolate</h3>
+
+            <p>Para los amantes del chocolate</p>
+
+            <button class="btn btn-outline btn-mas" onclick="window.location.href = 'postresdechocolate.html'">Ver Más</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="catalogo-btn">
+        <button class="btn btn-outline " onclick="window.location.href = 'catalogo.html'">Ver Catálogo Completo</button>
+      </div>
+    </section>
+
+    <!-- Resenas -->
+
+    <section class="reviews container">
+      <div class="section-title">
+        <h2>Lo Que Dicen Nuestros Clientes</h2>
+        <p>
+          Historias reales de momentos especiales endulzados por Mariluna
+          Postres
+        </p>
+      </div>
+
+      <div id="reviewsGrid" class="reviews-grid"></div>
+
+      <div class="reviews-btn">
+        <button class="btn btn-outline" onclick="verMasReseñas()">
+          Ver Más Reseñas
+        </button>
+      </div>
+
+      <!-- Estadisticas -->
+      <div class="reviews-stats">
+        <div class="stat">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <h3>5.0</h3>
+          <p>Calificación Promedio</p>
+        </div>
+
+        <div class="stat">
+          <h3>500+</h3>
+          <p>Pasteles Creados</p>
+        </div>
+
+        <div class="stat">
+          <h3>98%</h3>
+          <p>Clientes Satisfechos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Llamada a accion -->
+
+    <section class="cta container">
+      <h2>¿Listo para Crear Tu Pastel Perfecto?</h2>
+
+      <p>
+        Usa nuestro formulario interactivo para diseñar el pastel de tus sueños.
+        ¡Es fácil y divertido!
+      </p>
+
+       <button
+            class="btn btn-primary"
+            onclick="window.location.href = 'pastelespersonalizados.html'"
+          >
+            Comenzar Mi Pedido
+          </button>
+    </section>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+      <div class="footer-container container">
+        <!-- Columna 1 -->
+        <div class="footer-column">
+          <img src="src/logo.png" alt="Logo Mariluna" class="footer-logo" />
+
+          <p>Creando momentos dulces y memorables desde el corazón.</p>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="footer-column">
+          <h3>Enlaces Rápidos</h3>
+
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="sobrenosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="footer-column">
+          <h3>Servicios</h3>
+
+          <ul>
+            <li><a href="pastelespersonalizados.html">Pasteles Personalizados</a></li>
+  <li><a href="cupcakes.html">Cupcakes</a></li>
+  <li><a href="cheesecakes.html">Cheesecakes</a></li>
+  <li><a href="macarons.html">Macarons</a></li>
+  <li><a href="galletasartesanales.html">Galletas Decoradas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4 -->
+        <div class="footer-column">
+          <h3>Contáctanos</h3>
+
+          <ul>
+            <li>📍 Bogotá, Colombia</li>
+            <li>📞 +57 300 000 0000</li>
+            <li>✉️ info@marilunapostres.com</li>
+          </ul>
+
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/mariluna.postres.5"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12H17l-.5 3h-2.4v7A10 10 0 0 0 22 12z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/mariluna_postres/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 Mariluna Postres. Todos los derechos reservados.</p>
+
+        <span> Hecho con amor y azúcar 🧁 </span>
+      </div>
+    </footer>
+
+    <!-- CART OVERLAY -->
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+
+  <!-- HEADER -->
+  <div class="cart-header">
+    <h2>
+      🛒 Tu Carrito
+      (<span id="drawer-count">0</span> productos)
+    </h2>
+
+    <button class="close-cart" id="close-cart">✕</button>
+  </div>
+
+  <!-- ITEMS -->
+  <div class="cart-items" id="cart-items">
+
+    <div class="empty-cart">
+      <div class="empty-icon">🛒</div>
+      <p>Tu carrito está vacío</p>
+      <span>Agrega productos de nuestro catálogo</span>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cart-footer">
+
+    <div class="cart-total">
+      <span>Total:</span>
+      <strong id="cart-total">$0</strong>
+    </div>
+
+    <button class="checkout-btn">
+      Proceder al Pago
+    </button>
+
+  </div>
+
+</div>
+
+    <!-- JS -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
