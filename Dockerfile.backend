@@ -1,0 +1,20 @@
+# Dockerfile para el backend Node.js
+FROM node:18
+
+# Crear directorio de trabajo
+WORKDIR /app
+
+# Copiar package.json y package-lock.json
+COPY backend/package*.json ./
+
+# Instalar dependencias
+RUN npm install --production
+
+# Copiar el resto del código
+COPY backend/. ./
+
+# Exponer el puerto del backend
+EXPOSE 8080
+
+# Comando para iniciar el backend
+CMD ["node", "src/server.js"]
