@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cheesecakes | Mariluna Postres</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilo.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="navbar container">
+        <div class="logo">
+          <img src="src/logo.png" alt="Mariluna Postres" />
+        </div>
+
+        <nav class="nav-menu">
+          <a href="index.html">Inicio</a>
+          <a href="catalogo.html" class="active">Catálogo</a>
+          <a href="sobrenosotros.html">Sobre Nosotros</a>
+          <a href="contacto.html">Contacto</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="cart-btn" id="open-cart">
+            🛒
+            <span class="cart-count" id="cart-count">0</span>
+          </button>
+
+           <button
+            class="btn btn-primary"
+            onclick="window.location.href = 'pastelespersonalizados.html'"
+          >
+            🎂 Comenzar Mi Pedido
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- BOTON VOLVER -->
+    <div class="volver-container container">
+      <a href="catalogo.html" class="btn-volver"> ← Volver a Catálogo </a>
+    </div>
+
+    <!-- HERO -->
+    <section class="cheesecake-hero container">
+      <div class="section-title">
+        <h2>Cheesecakes Artesanales</h2>
+
+        <p>
+          Nuestros cheesecakes son cremosos, suaves y hechos con queso crema premium. Cada uno es horneado lentamente para lograr la textura perfecta.
+        </p>
+      </div>
+
+      <div class="cheesecake-feature">
+        <div class="feature-image">
+          <img
+            src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80"
+            alt="Cheesecake"
+          />
+        </div>
+
+        <div class="feature-info">
+          <h3>Cremosidad en Cada Porción</h3>
+
+          <div class="feature-list">
+            <div class="feature-item">✅ Queso crema Philadelphia de calidad premium</div>
+
+            <div class="feature-item">
+              ✅ Horneados al baño maría para textura perfecta
+            </div>
+
+            <div class="feature-item">
+              ✅ Base crujiente de galletas artesanales
+            </div>
+
+            <div class="feature-item">✅ Disponibles en porciones individuales o enteros (8 porciones)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section class="products-section container">
+      <div class="section-title">
+        <h2>Nuestros Sabores</h2>
+      </div>
+
+      <div class="products catalogo">
+        <!-- 1 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80"
+              alt="Cheesecake clásico"
+            />
+
+            <div class="product-overlay"></div>
+
+            <h3>Cheesecake Clásico</h3>
+          </div>
+
+          <div class="product-content cheesecake-card">
+            <p>
+              Tradicional cheesecake con base de galleta y topping de fresas
+              frescas
+            </p>
+
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <div class="price-row">
+              <h4>$45.000</h4>
+
+              <span>8 porciones</span>
+            </div>
+
+            <button class="btn-cart-cheesecake" data-id="cheesecake-clasico" data-name="Cheesecake Clásico" data-price="45000" data-image="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80">🛒 Agregar al Carrito</button>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?auto=format&fit=crop&w=800&q=80"
+              alt="Cheesecake Oreo"
+            />
+
+            <div class="product-overlay"></div>
+
+            <h3>Cheesecake de Oreo</h3>
+          </div>
+
+          <div class="product-content cheesecake-card">
+            <p>
+              Cremoso cheesecake con trozos de galletas Oreo y ganache de
+              chocolate
+            </p>
+
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <div class="price-row">
+              <h4>$48.000</h4>
+
+              <span>8 porciones</span>
+            </div>
+
+            <button class="btn-cart-cheesecake" class="btn-cart-cheesecake" data-id="cheesecake-oreo" data-name="Cheesecake de Oreo" data-price="48000" data-image="https://images.unsplash.com/photo-1609577737938-fb2139fa4c78?auto=format&fit=crop&w=800&q=80">🛒 Agregar al Carrito</button>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1570781148825-b9c37b9531e7?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Cheesecake mango"
+            />
+
+            <div class="product-overlay"></div>
+
+            <h3>Cheesecake de Mango</h3>
+          </div>
+
+          <div class="product-content cheesecake-card">
+            <p>
+              Exótico cheesecake con pulpa de mango y coulis de fruta de la
+              pasión
+            </p>
+
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <div class="price-row">
+              <h4>$50.000</h4>
+
+              <span>8 porciones</span>
+            </div>
+
+            <button class="btn-cart-cheesecake" class="btn-cart-cheesecake" data-id="cheesecake-mango" data-name="Cheesecake de Mango" data-price="50000" data-image="https://images.unsplash.com/photo-1570781148825-b9c37b9531e7?q=80&w=880&auto=format&fit=crop">🛒 Agregar al Carrito</button>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1708175313814-679cb8e90d2e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Cheesecake Nutella"
+            />
+
+            <div class="product-overlay"></div>
+
+            <h3>Cheesecake Nutella</h3>
+          </div>
+
+          <div class="product-content cheesecake-card">
+            <p>Irresistible cheesecake con Nutella y avellanas caramelizadas</p>
+
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <div class="price-row">
+              <h4>$52.000</h4>
+
+              <span>8 porciones</span>
+            </div>
+
+            <button class="btn-cart-cheesecake" class="btn-cart-cheesecake" data-id="cheesecake-nutella" data-name="Cheesecake Nutella" data-price="52000" data-image="https://images.unsplash.com/photo-1708175313814-679cb8e90d2e?q=80&w=1470&auto=format&fit=crop">🛒 Agregar al Carrito</button>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1716579866950-54abe7d4286f?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Cheesecake Matcha"
+            />
+
+            <div class="product-overlay"></div>
+
+            <h3>Cheesecake Matcha</h3>
+          </div>
+
+          <div class="product-content cheesecake-card">
+            <p>Elegante cheesecake de té verde matcha japonés premium</p>
+
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <div class="price-row">
+              <h4>$55.000</h4>
+
+              <span>8 porciones</span>
+            </div>
+
+            <button class="btn-cart-cheesecake" data-id="cheesecake-matcha" data-name="Cheesecake Matcha" data-price="55000" data-image="https://images.unsplash.com/photo-1716579866950-54abe7d4286f?q=80&w=1470&auto=format&fit=crop">🛒 Agregar al Carrito</button>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=951&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              alt="Cheesecake Red Velvet"
+            />
+
+            <div class="product-overlay"></div>
+
+            <h3>Cheesecake Red Velvet</h3>
+          </div>
+
+          <div class="product-content cheesecake-card">
+            <p>Fusión perfecta de red velvet cake con cremoso cheesecake</p>
+
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+
+            <div class="price-row">
+              <h4>$53.000</h4>
+
+              <span>8 porciones</span>
+            </div>
+
+            <button class="btn-cart-cheesecake" data-id="cheesecake-redvelvet" data-name="Cheesecake Red Velvet" data-price="53000" data-image="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?q=80&w=951&auto=format&fit=crop">🛒 Agregar al Carrito</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INFO -->
+    <section class="cheesecake-info container">
+      <div class="section-title-info">
+        <h3>Información Importante</h3>
+      </div>
+
+      <div class="info-box">
+        <div class="info-card-cheese">
+          <h3>Conservación</h3>
+
+          <p>
+            Mantener refrigerado entre 2°C y 4°C. Consumir preferiblemente dentro de los 5 días posteriores a la compra.
+          </p>
+        </div>
+
+        <div class="info-card-cheese">
+          <h3>Alérgenos</h3>
+
+          <p>
+            Contiene lácteos, huevo, gluten. Algunos sabores contienen frutos secos. Consulta antes de ordenar si tienes alergias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    
+    <footer class="footer">
+      <div class="footer-container container">
+        <!-- Columna 1 -->
+        <div class="footer-column">
+          <img src="src/logo.png" alt="Logo Mariluna" class="footer-logo" />
+
+          <p>Creando momentos dulces y memorables desde el corazón.</p>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="footer-column">
+          <h3>Enlaces Rápidos</h3>
+
+          <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="catalogo.html">Catálogo</a></li>
+            <li><a href="sobrenosotros.html">Nosotros</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="footer-column">
+          <h3>Servicios</h3>
+
+          <ul>
+            <li><a href="pastelespersonalizados.html">Pasteles Personalizados</a></li>
+  <li><a href="cupcakes.html">Cupcakes</a></li>
+  <li><a href="cheesecakes.html">Cheesecakes</a></li>
+  <li><a href="macarons.html">Macarons</a></li>
+  <li><a href="galletasartesanales.html">Galletas Decoradas</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4 -->
+        <div class="footer-column">
+          <h3>Contáctanos</h3>
+
+          <ul>
+            <li>📍 Bogotá, Colombia</li>
+            <li>📞 +57 300 000 0000</li>
+            <li>✉️ info@marilunapostres.com</li>
+          </ul>
+
+          <div class="social-icons">
+            <!-- Facebook -->
+            <a
+              href="https://www.facebook.com/mariluna.postres.5"
+              target="_blank"
+              aria-label="Facebook"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-3h2.4V9.5c0-2.4 1.4-3.7 3.6-3.7 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12H17l-.5 3h-2.4v7A10 10 0 0 0 22 12z"
+                />
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a
+              href="https://www.instagram.com/mariluna_postres/"
+              target="_blank"
+              aria-label="Instagram"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h10zm-5 3.5A4.5 4.5 0 1 0 16.5 12 4.5 4.5 0 0 0 12 7.5zm0 2A2.5 2.5 0 1 1 9.5 12 2.5 2.5 0 0 1 12 9.5zM17.5 6a1 1 0 1 0 1 1 1 1 0 0 0-1-1z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-bottom">
+        <p>© 2026 Mariluna Postres. Todos los derechos reservados.</p>
+
+        <span> Hecho con amor y azúcar 🧁 </span>
+      </div>
+    </footer>
+
+
+    <!-- CART OVERLAY -->
+<div class="cart-overlay" id="cart-overlay"></div>
+
+<!-- CART DRAWER -->
+<div class="cart-drawer" id="cart-drawer">
+
+  <!-- HEADER -->
+  <div class="cart-header">
+    <h2>
+      🛒 Tu Carrito
+      (<span id="drawer-count">0</span> productos)
+    </h2>
+
+    <button class="close-cart" id="close-cart">✕</button>
+  </div>
+
+  <!-- ITEMS -->
+  <div class="cart-items" id="cart-items">
+
+    <div class="empty-cart">
+      <div class="empty-icon">🛒</div>
+      <p>Tu carrito está vacío</p>
+      <span>Agrega productos de nuestro catálogo</span>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="cart-footer">
+
+    <div class="cart-total">
+      <span>Total:</span>
+      <strong id="cart-total">$0</strong>
+    </div>
+
+    <button class="checkout-btn">
+      Proceder al Pago
+    </button>
+
+  </div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+  </body>
+</html>
