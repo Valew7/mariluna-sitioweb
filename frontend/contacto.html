@@ -56,22 +56,24 @@
         <div class="form-card">
           <h3>Envíanos un Mensaje</h3>
 
-          <form>
+          <form id="contact-form">
             <label>Nombre Completo</label>
-            <input type="text" placeholder="María González" />
+            <input id="contact-nombre" type="text" placeholder="María González" />
 
             <label>Correo Electrónico</label>
-            <input type="email" placeholder="maria@ejemplo.com" />
+            <input id="contact-correo" type="email" placeholder="maria@ejemplo.com" />
 
             <label>Teléfono</label>
-            <input type="tel" placeholder="(555) 123-4567" />
+            <input id="contact-telefono" type="tel" placeholder="(555) 123-4567" />
 
             <label>Mensaje</label>
             <textarea
+              id="contact-mensaje"
               placeholder="Cuéntanos cómo podemos ayudarte..."
             ></textarea>
 
             <button
+              type="submit"
               class="btn-contact btn-primary"
               style="width: 100%; margin-top: 10px"
             >

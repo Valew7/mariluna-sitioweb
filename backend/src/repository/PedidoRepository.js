@@ -9,11 +9,11 @@ class PedidoRepository {
   }
 
   async obtenerTodos() {
-    return await Pedido.find().populate('productos.producto');
+    return await Pedido.find();
   }
 
   async obtenerPorId(id) {
-    return await Pedido.findById(id).populate('productos.producto');
+    return await Pedido.findById(id);
   }
 }
 

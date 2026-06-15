@@ -13,7 +13,7 @@ const pedidoSchema = new mongoose.Schema({
   },
   productos: [
     {
-      producto: { type: mongoose.Schema.Types.ObjectId, ref: 'Producto', required: true },
+      producto: { type: String, required: true },
       nombre: String,
       cantidad: { type: Number, required: true },
       precio: { type: Number, required: true },

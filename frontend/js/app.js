@@ -1,13 +1,15 @@
 // =============================
 // CATALOGO: Cargar productos desde backend
 // =============================
+const API_BASE_URL = 'http://localhost:8080';
+
 document.addEventListener('DOMContentLoaded', async () => {
   const catalogoDiv = document.getElementById('catalogoProductos');
   if (!catalogoDiv) return;
 
   try {
     // Cambia la URL si tu backend está en otro puerto o dominio
-    const res = await fetch('http://localhost:8080/api/productos');
+    const res = await fetch(`${API_BASE_URL}/api/productos`);
     if (!res.ok) throw new Error('No se pudo cargar el catálogo');
     const productos = await res.json();
 
@@ -32,10 +34,48 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 });
 
+// Enviar mensajes de contacto al backend
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const nombre = document.getElementById('contact-nombre').value.trim();
+    const correo = document.getElementById('contact-correo').value.trim();
+    const telefono = document.getElementById('contact-telefono').value.trim();
+    const mensaje = document.getElementById('contact-mensaje').value.trim();
+
+    if (!nombre || !correo || !telefono || !mensaje) {
+      alert('Por favor completa todos los campos del formulario de contacto.');
+      return;
+    }
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/mensajes`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ nombre, correo, telefono, mensaje })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al enviar el mensaje');
+      }
+
+      alert('Mensaje enviado exitosamente. Gracias por contactarnos.');
+      contactForm.reset();
+    } catch (error) {
+      console.error(error);
+      alert('No se pudo enviar el mensaje, por favor intenta de nuevo.');
+    }
+  });
+}
+
 // Función global para agregar productos al carrito (puedes mejorarla según tu lógica de carrito)
 window.agregarAlCarrito = function(id, nombre, precio, imagen) {
   alert(`Producto agregado: ${nombre}`);
-  // Aquí puedes implementar la lógica real de carrito
+  addToCart({ id, name: nombre, price: precio, image: imagen, quantity: 1 });
 };
 /* HERO CAROUSEL  */
 
@@ -225,6 +265,167 @@ frostingLabels.forEach((label) => {
     label.classList.add("active");
   });
 });
+
+/* PEDIDO PERSONALIZADO */
+function initCustomOrderButton() {
+  const customOrderButton = document.getElementById("btn-realizar-pedido");
+  if (!customOrderButton) {
+    console.log("Custom order button not found on this page.");
+    return;
+  }
+
+  console.log("Custom order button initialized.");
+  customOrderButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    try {
+      handleCustomCakeOrder();
+    } catch (err) {
+      console.error("Error en handleCustomCakeOrder:", err);
+      alert("Ocurrió un error al procesar el pedido. Por favor revisa los datos e intenta de nuevo.");
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCustomOrderButton);
+} else {
+  initCustomOrderButton();
+}
+
+function getInputValue(id) {
+  const element = document.getElementById(id);
+  return element ? element.value.trim() : "";
+}
+
+function handleCustomCakeOrder() {
+  const sizeBox = document.querySelector(".size-box.active") || document.querySelector(".size-box");
+  const flavorBox = document.querySelector(".flavor-box.active") || document.querySelector(".flavor-box");
+  const frostingLabel = document.querySelector(".radio-list label.active") || document.querySelector(".radio-list label");
+
+  const size = sizeBox ? sizeBox.textContent.trim() : "";
+  const flavor = flavorBox ? flavorBox.textContent.trim() : "";
+  const frosting = frostingLabel ? frostingLabel.textContent.trim() : "";
+
+  const mensajePastel = getInputValue("mensaje-pastel");
+  const instrucciones = getInputValue("instrucciones-pastel");
+  const delivery = document.querySelector('input[name="delivery"]:checked')?.value || "";
+  const fecha = getInputValue("fecha-entrega");
+  const hora = getInputValue("hora-entrega");
+  const nombre = getInputValue("nombre-completo");
+  const telefono = getInputValue("telefono-completo");
+  const correo = getInputValue("correo-completo");
+  const direccion = getInputValue("direccion-completa");
+
+  if (!nombre) {
+    alert("Por favor ingresa tu nombre completo.");
+    return;
+  }
+
+  if (!telefono) {
+    alert("Por favor ingresa tu teléfono.");
+    return;
+  }
+
+  if (!correo) {
+    alert("Por favor ingresa tu correo electrónico.");
+    return;
+  }
+
+  if (!size || !flavor || !frosting) {
+    alert("Por favor selecciona el tamaño, sabor y glaseado del pastel.");
+    return;
+  }
+
+  if (delivery === "domicilio" && !direccion) {
+    alert("Por favor ingresa la dirección de entrega para domicilio.");
+    return;
+  }
+
+  if (delivery === "domicilio" && (!fecha || !hora)) {
+    alert("Por favor selecciona fecha y hora para la entrega a domicilio.");
+    return;
+  }
+
+  const direccionDB = delivery === "recoger" ? "Recoger en tienda" : direccion;
+  const totalEstimado = 50000;
+
+  let mensaje = "🍰 *PEDIDO PERSONALIZADO - MARILUNA POSTRES*%0A%0A";
+  mensaje += "*TAMAÑO:* " + size + "%0A";
+  mensaje += "*SABOR:* " + flavor + "%0A";
+  mensaje += "*GLASEADO:* " + frosting + "%0A";
+
+  if (mensajePastel) {
+    mensaje += "*MENSAJE EN EL PASTEL:* " + mensajePastel + "%0A";
+  }
+
+  if (instrucciones) {
+    mensaje += "*INSTRUCCIONES:* " + instrucciones + "%0A";
+  }
+
+  mensaje += "*ENTREGA:* " + (delivery === "domicilio" ? "Domicilio" : "Recoger en tienda") + "%0A";
+
+  if (fecha) {
+    mensaje += "*FECHA:* " + fecha + "%0A";
+  }
+
+  if (hora) {
+    mensaje += "*HORA:* " + hora + "%0A";
+  }
+
+  mensaje += "%0A*CLIENTE:* " + nombre + "%0A";
+  mensaje += "*TELÉFONO:* " + telefono + "%0A";
+  mensaje += "*CORREO:* " + correo + "%0A";
+  mensaje += "*DIRECCIÓN:* " + direccionDB + "%0A";
+
+  const pedidoBody = {
+    cliente: {
+      nombre,
+      telefono,
+      correo,
+      direccion: direccionDB,
+      notas: instrucciones || mensajePastel || "Pedido personalizado"
+    },
+    productos: [
+      {
+        producto: "pastel-personalizado",
+        nombre: `${size} - ${flavor} - ${frosting}`,
+        cantidad: 1,
+        precio: totalEstimado,
+        imagen: ""
+      }
+    ],
+    total: totalEstimado
+  };
+
+  sendCustomOrder(pedidoBody)
+    .then(() => {
+      alert('Pedido guardado correctamente. Ahora se abrirá WhatsApp para completar el envío.');
+      const numero = "573001234567";
+      const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, "_blank");
+    })
+    .catch((error) => {
+      console.error(error);
+      alert('No se pudo guardar el pedido. Por favor intenta de nuevo.');
+    });
+}
+
+async function sendCustomOrder(body) {
+  const response = await fetch(`${API_BASE_URL}/api/pedidos`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json().catch(() => null);
+    throw new Error(errorData?.error || 'Error al guardar el pedido en la base de datos');
+  }
+
+  return await response.json();
+}
 
 /* CARRITO GLOBAL */
 
@@ -426,10 +627,9 @@ const checkoutTotal = document.getElementById("checkout-total");
 const checkoutForm = document.getElementById("checkout-form");
 
 if (checkoutItems && checkoutTotal) {
-  const cart = getCart();
-
   function renderCheckout() {
     checkoutItems.innerHTML = "";
+    const cart = getCart();
 
     let total = 0;
 
@@ -469,49 +669,95 @@ if (checkoutItems && checkoutTotal) {
   renderCheckout();
 
   if (checkoutForm) {
-    checkoutForm.addEventListener("submit", function (e) {
+    checkoutForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
-      const nombre = document.getElementById("nombre").value;
-      const telefono = document.getElementById("telefono").value;
-      const correo = document.getElementById("correo").value;
-      const direccion = document.getElementById("direccion").value;
-      const notas = document.getElementById("notas").value;
+      const nombre = document.getElementById("nombre").value.trim();
+      const telefono = document.getElementById("telefono").value.trim();
+      const correo = document.getElementById("correo").value.trim();
+      const direccion = document.getElementById("direccion").value.trim();
+      const notas = document.getElementById("notas").value.trim();
 
-      let mensaje = "🍰 *NUEVO PEDIDO - MARILUNA POSTRES* %0A%0A";
+      const cart = getCart();
 
-      mensaje += "*INFORMACIÓN DEL CLIENTE* %0A";
-      mensaje += "👤 Nombre: " + nombre + "%0A";
-      mensaje += "📞 Teléfono: " + telefono + "%0A";
-      mensaje += "📧 Correo: " + correo + "%0A";
-      mensaje += "📍 Dirección: " + direccion + "%0A";
-
-      if (notas.trim() !== "") {
-        mensaje += "📝 Notas: " + notas + "%0A";
+      if (!nombre || !telefono || !correo || !direccion) {
+        alert('Por favor completa todos los campos requeridos antes de enviar el pedido.');
+        return;
       }
 
-      mensaje += "%0A*PRODUCTOS* %0A";
+      if (!cart || cart.length === 0) {
+        alert('No hay productos en el carrito. Agrega algo antes de continuar.');
+        return;
+      }
 
-      let total = 0;
+      const productosPedido = cart.map((item) => ({
+        producto: item.id,
+        nombre: item.name,
+        cantidad: item.quantity,
+        precio: item.price,
+        imagen: item.image
+      }));
 
-      cart.forEach((item, index) => {
-        total += item.price * item.quantity;
+      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-        mensaje += "%0A" + (index + 1) + ". " + item.name + "%0A";
-        mensaje += "Cantidad: " + item.quantity + "%0A";
-        mensaje +=
-          "Subtotal: $" +
-          (item.price * item.quantity).toLocaleString("es-CO") +
-          "%0A";
-      });
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/pedidos`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            cliente: { nombre, telefono, correo, direccion, notas },
+            productos: productosPedido,
+            total
+          })
+        });
 
-      mensaje += "%0A💰 *TOTAL: $" + total.toLocaleString("es-CO") + "*";
+        if (!response.ok) {
+          throw new Error('Error al guardar el pedido en la base de datos');
+        }
 
-      const numero = "573001234567";
-      const url = "https://wa.me/" + numero + "?text=" + mensaje;
+        alert('El pedido ha sido guardado y el envío se ha procesado con éxito. Ahora se abrirá WhatsApp.');
 
-      window.open(url, "_blank");
+        const mensaje = buildWhatsappMessage({ nombre, telefono, correo, direccion, notas }, cart, total);
+        const numero = "573001234567";
+        const url = "https://wa.me/" + numero + "?text=" + mensaje;
+
+        window.open(url, "_blank");
+
+        localStorage.removeItem('cart');
+        updateCartUI();
+        renderCheckout();
+      } catch (error) {
+        console.error(error);
+        alert('No se pudo guardar el pedido. Por favor intenta de nuevo.');
+      }
     });
+  }
+
+  function buildWhatsappMessage(cliente, cartItems, total) {
+    let mensaje = "🍰 *NUEVO PEDIDO - MARILUNA POSTRES* %0A%0A";
+
+    mensaje += "*INFORMACIÓN DEL CLIENTE* %0A";
+    mensaje += "👤 Nombre: " + cliente.nombre + "%0A";
+    mensaje += "📞 Teléfono: " + cliente.telefono + "%0A";
+    mensaje += "📧 Correo: " + cliente.correo + "%0A";
+    mensaje += "📍 Dirección: " + cliente.direccion + "%0A";
+
+    if (cliente.notas) {
+      mensaje += "📝 Notas: " + cliente.notas + "%0A";
+    }
+
+    mensaje += "%0A*PRODUCTOS* %0A";
+
+    cartItems.forEach((item, index) => {
+      mensaje += "%0A" + (index + 1) + ". " + item.name + "%0A";
+      mensaje += "Cantidad: " + item.quantity + "%0A";
+      mensaje += "Subtotal: $" + (item.price * item.quantity).toLocaleString("es-CO") + "%0A";
+    });
+
+    mensaje += "%0A💰 *TOTAL: $" + total.toLocaleString("es-CO") + "*";
+    return mensaje;
   }
 }
 

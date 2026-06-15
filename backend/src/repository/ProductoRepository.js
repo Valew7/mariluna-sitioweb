@@ -9,7 +9,7 @@ class ProductoRepository {
   }
 
   async obtenerTodos() {
-    return await Producto.find();
+    return await Producto.find({ nombre: { $ne: 'Pasteles Personalizados' } });
   }
 
   async obtenerPorId(id) {

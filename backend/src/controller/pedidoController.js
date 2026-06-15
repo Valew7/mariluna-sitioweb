@@ -9,12 +9,13 @@ module.exports = {
     try {
       // Validación básica
       const { cliente, productos, total } = req.body;
-      if (!cliente || !productos || !total) {
+      if (!cliente || !Array.isArray(productos) || productos.length === 0 || !total) {
         return res.status(400).json({ error: 'Datos incompletos' });
       }
       const pedido = await pedidoRepo.crear(req.body);
       res.status(201).json(pedido);
     } catch (err) {
+      console.error('Error al crear pedido:', err);
       res.status(400).json({ error: 'Error al crear pedido' });
     }
   },
