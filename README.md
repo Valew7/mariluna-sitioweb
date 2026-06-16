@@ -173,7 +173,7 @@ Requisito: tener [Docker Desktop](https://www.docker.com/products/docker-desktop
 
 ```bash
 # Clonar el repositorio
-git clone <url-del-repositorio>
+git clone https://github.com/Valew7/mariluna-sitioweb
 cd mariluna-sitioweb-main
 
 # Levantar todos los servicios
