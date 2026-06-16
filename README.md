@@ -193,13 +193,4 @@ docker compose down
 ```
 
 
-## Variables de entorno
-
-| Variable | Descripción | Valor por defecto |
-|---|---|---|
-| `MONGODB_URI` | URI de conexión a MongoDB | `mongodb://localhost:27017/mariluna` |
-| `PORT` | Puerto del servidor backend | `8080` |
-
----
-
 
