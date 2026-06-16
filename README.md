@@ -1,54 +1,205 @@
 # Mariluna Postres — Sitio Web
 
 **Programa:** Programación de aplicaciones y servicios para la nube  
-**Proyecto:** GA6-220501123-AA3-EV01  
-**Integrantes:** Valentina Hinestroza Pineda, Michelle Duque, Camilo Durán
+**Actividad:** GA6-220501123-AA4 — Construir el frontend de aplicación Web  
+**Evidencia:** GA6-220501123-AA4-EV01 — Sitio Web  
+**Integrantes:**
+-Camilo Andrés Durán Toro
+-Valentina Hinestroza Pineda
+-Michelle Paola Duque De La Rosa
+ 
 
 ---
 
-## Prototipado
+## Descripción
 
-Usamos Figma para diseñar las vistas antes de ponernos a codear. Ahí definimos la navegación, los colores y cómo iba a verse en distintos dispositivos.
-
-🔗 [Ver prototipo en Figma](https://www.figma.com/make/STUOofQywn0h2Whqz80wGy/Mariluna-Postres---Pagina-Principal?code-node-id=0-9&p=f&fullscreen=1)
-
-En la carpeta `prototipo/` están las capturas del diseño en desktop, tablet y móvil, más el flujo de navegación.
-
+Sitio web completo para **Mariluna Postres**, una pastelería artesanal. El proyecto incluye un frontend de 11 páginas HTML con carrito de compras funcional y un backend con API REST conectada a MongoDB. Los pedidos y mensajes de contacto se almacenan en la base de datos; el flujo de compra también integra botón WhatsApp (wa.me) para la confirmación del pedido. Todo realizado conforme a la fases de documentación realizadas a lo largo del proyecto y su alcance.
 
 ---
 
-## Páginas del sitio
+## Prototipo
 
-El sitio tiene 11 páginas HTML conectadas entre sí con una barra de navegación que aparece en todas:
+El diseño fue prototipado en **Figma** antes del desarrollo, definiendo navegación, paleta de colores y adaptación a distintos dispositivos.
 
-- `index.html` — inicio con carrusel
-- `catalogo.html` — todos los productos
-- `cheesecakes.html`, `cupcakes.html`, `galletasartesanales.html`, `macarons.html`, `postresdechocolate.html` — categorías
-- `pastelespersonalizados.html` — para hacer pedidos
-- `sobrenosotros.html` — quiénes somos
-- `contacto.html` — formulario de contacto
-- `pago.html` — resumen y pago
+🔗 [Ver prototipo interactivo en Figma](https://www.figma.com/make/STUOofQywn0h2Whqz80wGy/Mariluna-Postres---Pagina-Principal?code-node-id=0-9&p=f&fullscreen=1)
 
-La navegación tiene menú hamburguesa para móvil, carrito con contador y botón de pedido rápido.
+Las capturas del diseño están en la carpeta `frontend/prototipo/`:
 
----
-
-## Cómo está hecho
-
-Separamos todo en tres carpetas: `css/` para los estilos, `js/` para la lógica y `src/` para imágenes del sitio.
-
-El HTML usa etiquetas semánticas (`header`, `nav`, `section`, `footer`) y todas las imágenes tienen atributo `alt`. El CSS está en un solo archivo (`estilo.css`) con media queries para que se vea bien en celular, tablet y computador. Para las fuentes usamos Google Fonts con Lora y Poppins.
-
-En JavaScript manejamos el carrito de compras, el menú hamburguesa y el carrusel de imágenes.
+| Archivo | Descripción |
+|---|---|
+| `Desktop.png` | Vista escritorio |
+| `Tablet.png` | Vista tablet |
+| `Phone.png` | Vista móvil |
+| `flujo-navegacion.png` | Diagrama de navegación entre páginas |
 
 ---
 
-## Diseño visual
+## Estructura del proyecto
 
-La paleta de colores va en tonos rosados y crema, pensada para que se sienta dulce y coherente con la marca. Tiene efectos hover en los botones y tarjetas, animaciones en el menú móvil y un carrito con modal que muestra el resumen del pedido en tiempo real.
+```
+mariluna-sitioweb-main/
+├── frontend/                   # Sitio web (servido con Nginx)
+│   ├── index.html
+│   ├── catalogo.html
+│   ├── cheesecakes.html
+│   ├── cupcakes.html
+│   ├── galletasartesanales.html
+│   ├── macarons.html
+│   ├── postresdechocolate.html
+│   ├── pastelespersonalizados.html
+│   ├── sobrenosotros.html
+│   ├── contacto.html
+│   ├── pago.html
+│   ├── css/
+│   │   └── estilo.css          # Estilos globales con media queries
+│   ├── js/
+│   │   └── app.js              # Lógica del carrito, carrusel y consumo de API
+│   ├── src/
+│   │   └── logo.png
+│   └── prototipo/              # Capturas del diseño en Figma
+├── backend/                    # API REST (Node.js + Express)
+│   ├── src/
+│   │   ├── server.js           # Punto de entrada
+│   │   ├── app.js              # Configuración Express y middlewares
+│   │   ├── config/
+│   │   │   └── db.js           # Conexión MongoDB y carga inicial de datos
+│   │   ├── models/             # Esquemas Mongoose
+│   │   ├── repository/         # Acceso a base de datos (patrón repositorio)
+│   │   ├── controller/         # Lógica de negocio
+│   │   └── routes/             # Definición de endpoints
+│   ├── package.json
+│   └── .env                    # Variables de entorno
+├── Dockerfile.backend
+├── Dockerfile.frontend
+└── docker-compose.yml
+```
 
 ---
 
 ## Tecnologías
 
-HTML5, CSS3, JavaScript, Figma, Google Fonts, Git/GitHub
+**Frontend:** HTML5 · CSS3 · JavaScript · Google Fonts (Lora + Poppins) · Figma
+
+**Backend:** Node.js · Express 5 · Mongoose · MongoDB · CORS · dotenv · nodemon
+
+**Infraestructura:** Docker · Docker Compose · Nginx
+
+---
+
+## Páginas del sitio
+
+| Página | Descripción |
+|---|---|
+| `index.html` | Inicio con carrusel de imágenes y reseñas |
+| `catalogo.html` | Catálogo dinámico cargado desde la API |
+| `cheesecakes.html` | Categoría cheesecakes con botones de carrito |
+| `cupcakes.html` | Categoría cupcakes |
+| `galletasartesanales.html` | Categoría galletas artesanales |
+| `macarons.html` | Categoría macarons |
+| `postresdechocolate.html` | Categoría postres de chocolate |
+| `pastelespersonalizados.html` | Formulario de pedido personalizado |
+| `sobrenosotros.html` | Historia y equipo de Mariluna |
+| `contacto.html` | Formulario de contacto (guarda en BD) |
+| `pago.html` | Resumen del carrito y formulario de envío |
+
+La navegación incluye menú hamburguesa para móvil, carrito con contador en tiempo real y botón de pedido rápido.
+
+---
+
+## Funcionalidades del Frontend
+
+- **Carrito de compras:** agrega, edita cantidad y elimina productos. Se persiste en `localStorage` entre páginas.
+- **Catálogo dinámico:** los productos se cargan desde `GET /api/productos` al entrar a `catalogo.html`.
+- **Pedido desde carrito:** al confirmar en `pago.html`, el pedido se guarda en MongoDB vía `POST /api/pedidos` y se abre WhatsApp con el resumen.
+- **Pedido personalizado:** el formulario de pasteles personalizados también guarda el pedido en BD antes de abrir WhatsApp.
+- **Formulario de contacto:** los mensajes se guardan en MongoDB vía `POST /api/mensajes`.
+- **Carrusel automático** en la página de inicio con controles manuales y puntos de navegación.
+- **Responsive:** se adapta a móvil, tablet y escritorio mediante media queries.
+
+---
+
+## API REST — Endpoints
+
+Base URL: `http://localhost:8080/api`
+
+### Productos
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| `GET` | `/api/productos` | Lista todos los productos disponibles |
+| `GET` | `/api/productos/:id` | Obtiene un producto por ID |
+| `POST` | `/api/productos` | Crea un nuevo producto |
+| `PUT` | `/api/productos/:id` | Actualiza un producto existente |
+| `DELETE` | `/api/productos/:id` | Elimina un producto |
+
+
+### Pedidos
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| `GET` | `/api/pedidos` | Lista todos los pedidos |
+| `GET` | `/api/pedidos/:id` | Obtiene un pedido por ID |
+| `POST` | `/api/pedidos` | Registra un nuevo pedido |
+
+
+### Mensajes de contacto
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| `GET` | `/api/mensajes` | Lista todos los mensajes recibidos |
+| `POST` | `/api/mensajes` | Guarda un nuevo mensaje de contacto |
+
+
+## Arquitectura del Backend
+
+El backend aplica el patrón **MVC con capa de repositorio**, separando responsabilidades en cuatro capas:
+
+```
+routes → controller → repository → model (MongoDB)
+```
+
+- **Routes:** definen los endpoints y delegan al controlador.
+- **Controller:** valida la petición, maneja errores y responde con el código HTTP correcto.
+- **Repository:** encapsula las operaciones de Mongoose (principio de inversión de dependencias).
+- **Model:** define el esquema de datos con Mongoose.
+
+---
+
+## Cómo ejecutar el proyecto
+
+### Con Docker (recomendado)
+
+Requisito: tener [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado.
+
+```bash
+# Clonar el repositorio
+git clone <url-del-repositorio>
+cd mariluna-sitioweb-main
+
+# Levantar todos los servicios
+docker compose up --build
+```
+
+Esto levanta tres contenedores:
+- **mongo** — Base de datos MongoDB en el puerto `27017`
+- **backend** — API REST en `http://localhost:8080`
+- **frontend** — Sitio web en `http://localhost:80`
+
+Al iniciar, el backend carga automáticamente el catálogo inicial de productos en la base de datos si esta está vacía.
+
+Para detener:
+```bash
+docker compose down
+```
+
+
+## Variables de entorno
+
+| Variable | Descripción | Valor por defecto |
+|---|---|---|
+| `MONGODB_URI` | URI de conexión a MongoDB | `mongodb://localhost:27017/mariluna` |
+| `PORT` | Puerto del servidor backend | `8080` |
+
+---
+
+
