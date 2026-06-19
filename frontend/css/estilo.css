@@ -387,10 +387,21 @@ body{
   transform:translateY(-8px);
 }
 
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .product-card img{
   width:100%;
   height:260px;
   object-fit:cover;
+}
+
+.product-precio {
+    margin-top: auto;
+    margin-bottom: 12px;
 }
 
 .product-content{
@@ -430,6 +441,17 @@ body{
 
 .product-item-4{
     background-color: #fff7ed;
+}
+
+.btn-mas,
+.btn-pastel {
+    width: 100%;
+    min-height: 48px;
+    margin-top: 10px;
+}
+
+.personalizado-card .product-content p {
+    min-height: 48px;
 }
 
 /* CTA - llamado de accion */
