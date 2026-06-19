@@ -1,7 +1,6 @@
 # Mariluna Postres — Sitio Web
 
 **Programa:** Programación de aplicaciones y servicios para la nube  
-**Actividad:** GA6-220501123-AA4 — Construir el frontend de aplicación Web  
 **Evidencia:** GA6-220501123-AA4-EV01 — Sitio Web  
 **Integrantes:**
 -Camilo Andrés Durán Toro
