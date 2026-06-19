@@ -13,9 +13,7 @@
 
 ## Descripción
 
-Sitio web completo para **Mariluna Postres**, una pastelería artesanal. El proyecto incluye un frontend de 11 páginas HTML con carrito de compras funcional y un backend con API REST conectada a MongoDB. Los pedidos y mensajes de contacto se almacenan en la base de datos; el flujo de compra también integra botón WhatsApp (wa.me) para la confirmación del pedido. Todo realizado conforme a la fases de documentación realizadas a lo largo del proyecto y su alcance.
-
----
+Sitio web completo para **Mariluna Postres**, una pastelería artesanal. El proyecto incluye un frontend de 11 páginas HTML con carrito de compras funcional y un backend con API REST conectada a MongoDB. Los pedidos y mensajes de contacto se almacenan en la base de datos; el flujo de compra también integra botón WhatsApp (wa.me) para la confirmación del pedido. Todo realizado conforme a las fases de documentación del proyecto. El alcance definido en documentos anteriores no contempla panel de administrador, por lo que las operaciones de edición y eliminación están disponibles únicamente a nivel de API REST
 
 ## Prototipo
 
